@@ -1,0 +1,29 @@
+{
+  "name": "sedona",
+  "version": "1.0.0",
+  "description": "training project for htmlacademy' intensive",
+  "main": "gulpfile.js",
+  "directories": {},
+  "dependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1"
+  },
+  "devDependencies": {
+    "bemto.pug": "^2.1.0",
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "gulp": "^3.9.1",
+    "lost": "^8.3.0",
+    "pixel-glass": "^1.0.13",
+    "prettier": "^1.16.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
