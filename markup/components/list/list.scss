@@ -5,7 +5,11 @@
     flex-flow: column wrap;
 
     @media #{$tab-desk} {
-        flex-flow: row wrap;
+        display: grid !important;
+        // grid-template-columns: [col1-start] 1fr [col2-start] 1fr [col3-start] 1fr [col4-start] 1fr [col5-start] 1fr [col5-end];
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-areas: "index gallery . feedback adv";
+        // flex-flow: row wrap;
     }
 
     &__item {
@@ -48,15 +52,34 @@
                 background-color: transparent;
             }
 
-            lost-column: 1/5;
+            &:nth-child(1) {
+                grid-area: index;
+                // grid-column: col1-start / col2-start;
+            }
 
             &:nth-child(2) {
-                margin-right: auto;
+                grid-area: gallery;
+                // grid-column: col2-start / col3-start;
             }
 
             &:nth-child(3) {
-                margin-left: auto;
+                grid-area: feedback;
+                // grid-column: col4-start / col5-start;
             }
+
+            &:nth-child(4) {
+                grid-area: adv;
+                // grid-column: col5-start / col5-end;
+            }
+            // lost-column: 1/5;
+
+            // &:nth-child(2) {
+            //     margin-right: auto;
+            // }
+
+            // &:nth-child(3) {
+            //     margin-left: auto;
+            // }
 
             &--active #{$root}__link {
                 color: $active-link-color;
