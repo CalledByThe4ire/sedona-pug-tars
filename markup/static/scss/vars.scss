@@ -37,7 +37,7 @@ $portable: 'only screen and (max-width: 1279px)';
 
 $tab-desk: 'only screen and (min-width: 768px)';
 
-$retina: 'only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi)';
+$retina: 'only screen and (-webkit-min-device-pixel-ratio: 2), only screen and ( min-resolution: 192dpi), only screen and ( min-resolution: 2dppx), only screen and (min-device-pixel-ratio: 2)';
 
 // Container sizes
 $container--min: 320px !default;
@@ -48,3 +48,8 @@ $container--max: 1280px !default;
 $offset--mobile: 20px !default;
 $offset--tablet: 50px !default;
 $offset--desktop: 40px !default;
+
+  // http://lostgrid.org/
+  @lost flexbox flex;
+  @lost gutter 0;
+

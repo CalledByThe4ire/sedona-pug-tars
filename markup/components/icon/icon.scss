@@ -1,0 +1,26 @@
+.icon,
+#icon {
+  &--logo {
+    &__outer-contour,
+    &__clouds,
+    &__bridge {
+      display: none;
+    }
+
+    @media #{$desktop} {
+      &__outer-contour,
+      &__clouds,
+      &__bridge {
+        display: block;
+      }
+    }
+  }
+
+  &--cross {
+    fill: #ffffff;
+  }
+
+  &--hamburger {
+    fill: $color-secondary;
+  }
+}

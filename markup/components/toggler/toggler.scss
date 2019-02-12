@@ -1,0 +1,32 @@
+.toggler {
+    display: none;
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+    outline: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    @media #{$mobile} {
+        display: flex;
+        @include margin-y(auto);
+
+        &--is-opened {
+            & + .main-nav__dropdown {
+                display: block;
+            }
+        }
+
+        &--is-closed {
+            & + .main-nav__dropdown {
+                display: none;
+            }
+        }
+    }
+
+    &__icon {
+        pointer-events: none;
+    }
+}

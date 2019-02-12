@@ -1,0 +1,31 @@
+.page {
+    &__wrapper {
+        position: relative;
+        @include container();
+
+        &::before {
+            content: '';
+
+            z-index: -5;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            box-shadow: 0 0 20px rgba($color-primary, 0.2);
+        }
+    }
+
+    &.js-dropdown {
+        & .main-nav__dropdown {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            background-color: rgba($color-secondary, 0.75);
+        }
+    }
+}

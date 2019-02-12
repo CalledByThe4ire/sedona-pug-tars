@@ -1,0 +1,22 @@
+include ../logo/logo.pug
+include ../main-nav/main-nav.pug
+include ../toggler/toggler.pug
+include ../intro/intro.pug
+
+mixin page-header(data, parentBlockName)
+	- const { name, href } = data;
+	+b('header').page-header&attributes(attributes)
+		+e.inner
+			+logo(href)
+				!= pugHelpers.Icon.call(locals, {iconName: 'icon--logo', className: 'logo__icon', iconWidth: '102', iconHeight: '83'})
+			+main-nav(mainNav, href)(class=`${parentBlockName}__main-nav`)
+				+toggler(class='main-nav__toggler js-toggler')
+					!= pugHelpers.Icon.call(locals, {iconName: 'icon--cross', className: 'toggler__icon', iconWidth: '23', iconHeight: '22'})
+			+e.link(href=href)
+				+e.image(
+					src='%=static=%img/assets/page-header/page-header__welcome-text.svg'
+					width="280"
+					height="213"
+					alt="Welcome to the gorgeous Sedona"
+				)
+			+intro(intro, name)(class=`${parentBlockName}__intro`)

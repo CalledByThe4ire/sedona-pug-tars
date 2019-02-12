@@ -1,0 +1,11 @@
+.logo {
+    &__icon {
+      width: 102px;
+      height: 83px;
+
+      @media #{$desktop} {
+        width: 187px;
+        height: 96px;
+      }
+    }
+  }

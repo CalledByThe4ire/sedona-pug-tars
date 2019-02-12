@@ -1,0 +1,6 @@
+mixin intro(data, name)
+	+b('div').intro&attributes(attributes)
+		- const key = Object.keys(data).filter(k => k === name)
+		- const entry = data[key]
+		+e('h2').title !{entry.title}
+		+e('h3').subtitle !{entry.subtitle}

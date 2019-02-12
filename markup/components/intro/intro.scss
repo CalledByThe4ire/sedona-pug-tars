@@ -1,0 +1,74 @@
+.intro {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    @include padding-x($offset--mobile);
+
+    background-color: #ffffff;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        display: block;
+
+        overflow: hidden;
+    }
+
+    &::before {
+        bottom: 100%;
+
+        width: 1200px;
+        height: 57px;
+        background: url('%=static=%assets/intro/triangle--top.svg') no-repeat
+            center top;
+    }
+
+    &::after {
+        top: 100%;
+
+        width: 768px;
+        height: 37px;
+        background: url('%=static=%assets/intro/triangle--bottom.svg') no-repeat
+            center bottom;
+
+        @media #{$tab-desk} {
+            display: none;
+            @include padding-x(0);
+        }
+    }
+
+    &__title,
+    &__subtitle {
+        margin: 0;
+        padding: 0;
+
+        line-height: 2.6rem;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    &__title {
+        @include padding-y(3rem);
+
+        font-size: 1.8rem;
+        font-weight: 700;
+
+        @media #{$tab-desk} {
+            padding-top: 0;
+            font-size: 2.1rem;
+        }
+
+        & span {
+            display: block;
+        }
+    }
+
+    &__subtitle {
+        font-size: 1.4rem;
+        font-weight: 400;
+        color: #333333;
+    }
+}

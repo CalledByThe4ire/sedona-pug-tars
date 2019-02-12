@@ -1,0 +1,104 @@
+.list {
+    $root: &;
+
+    display: flex !important;
+    flex-flow: column wrap;
+
+    @media #{$tab-desk} {
+        flex-flow: row wrap;
+    }
+
+    &__item {
+        background-color: $color-secondary;
+        transition: 0.25s;
+
+        &:first-child {
+            box-shadow: inset 0 -1px 0 rgba($color-primary, 0.2);
+        }
+
+        &:not(:first-child) {
+            box-shadow: inset 0 1px 0 rgba(#ffffff, 0.2);
+        }
+
+        &:last-child {
+            box-shadow: inset 0 1px 0 rgba(#ffffff, 0.2),
+                inset 0 -2px 2px rgba($color-primary, 0.2);
+        }
+
+        &:hover {
+            background-color: #669ec0;
+        }
+
+        &:active {
+            background-color: #5496bd;
+            color: rgba(#ffffff, 0.3);
+        }
+
+        @media #{$tab-desk} {
+            background-color: transparent;
+
+            &:first-child,
+            &:not(:first-child),
+            &:last-child {
+                box-shadow: none;
+            }
+
+            &:hover,
+            &:active {
+                background-color: transparent;
+            }
+
+            lost-column: 1/5;
+
+            &:nth-child(2) {
+                margin-right: auto;
+            }
+
+            &:nth-child(3) {
+                margin-left: auto;
+            }
+
+            &--active #{$root}__link {
+                color: $active-link-color;
+            }
+
+            &--active:hover #{$root}__link {
+                color: $active-link-color--hover;
+            }
+
+            &--active:active #{$root}__link {
+                color: $active-link-color--down;
+            }
+        }
+    }
+
+    &__link {
+        display: block;
+        @include padding-y(2.8rem);
+
+        font-style: normal;
+        font-weight: 700;
+        font-size: ($font-size + 0.4rem);
+        line-height: 0;
+        white-space: nowrap;
+        color: #ffffff;
+        text-decoration: none;
+        text-transform: uppercase;
+        text-align: center;
+
+        background-color: transparent;
+
+        @media #{$tab-desk} {
+            font-size: $font-size;
+            color: $color-primary;
+
+            &:hover {
+                color: $link-color--hover;
+            }
+
+            &:active {
+                color: $link-color--down;
+            }
+        }
+    }
+}
