@@ -6,11 +6,12 @@
 
         background-image: url('%=static=%assets/page-header/page-header__back-index--mobile.png');
         background-repeat: no-repeat;
-        background-position: center top;
+        background-position: center 50px;
         background-size: cover;
 
         @media #{$tab-desk} {
             min-height: 574px;
+            background-position: center top;
         }
 
         @media #{$retina} {
