@@ -1,3 +1,6 @@
-mixin features(data)
+include ../intro/intro.pug
+
+mixin features(data, activePageData, parentBlockName)
+	- const { name } = activePageData;
 	+b('main').features&attributes(attributes)
-		block
+		+intro(intro, name)(class=`${parentBlockName}__intro`)
