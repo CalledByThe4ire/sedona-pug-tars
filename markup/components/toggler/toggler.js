@@ -4,7 +4,7 @@ import { setAttributes } from 'static/js/libraries/utils';
 document.addEventListener('DOMContentLoaded', () => {
     const togglerMod = { close: '--is-closed', open: '--is-opened' };
     const icon = document.querySelector('.js-toggler use');
-    const iconMod = { close: 'hamburger', open: 'cross' };
+    const iconMod = { close: 'menu', open: 'cross' };
 
     /**
      * В зависимости от наличия модификатора
