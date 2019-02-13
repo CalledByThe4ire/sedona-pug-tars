@@ -1,9 +1,8 @@
 .page-header {
     &__inner {
-        @include container();
         display: flex;
         flex-flow: column wrap;
-        min-height: 666px;
+        min-height: 445px;
 
         background-image: url('%=static=%assets/page-header/page-header__back-index--mobile.png');
         background-repeat: no-repeat;
@@ -11,7 +10,7 @@
         background-size: cover;
 
         @media #{$tab-desk} {
-            min-height: 780px;
+            min-height: 574px;
         }
 
         @media #{$retina} {
@@ -33,20 +32,6 @@
             @media #{$retina} {
                 background-image: url('%=static=%assets/page-header/page-header__back-index--desktop@2x.png');
             }
-        }
-    }
-
-    &__inner,
-    &__main-nav,
-    &__intro {
-        @include margin-x(-$offset--mobile);
-
-        @media #{$tablet} {
-            @include margin-x(-$offset--tablet);
-        }
-
-        @media #{$desktop} {
-            @include margin-x(-$offset--desktop);
         }
     }
 

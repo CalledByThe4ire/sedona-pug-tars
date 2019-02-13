@@ -1,7 +1,6 @@
 include ../logo/logo.pug
 include ../main-nav/main-nav.pug
 include ../toggler/toggler.pug
-include ../intro/intro.pug
 
 mixin page-header(data, parentBlockName)
 	- const { name, href } = data;
@@ -19,4 +18,3 @@ mixin page-header(data, parentBlockName)
 					height="213"
 					alt="Welcome to the gorgeous Sedona"
 				)
-			+intro(intro, name)(class=`${parentBlockName}__intro`)
