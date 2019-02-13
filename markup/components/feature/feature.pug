@@ -1,0 +1,37 @@
+mixin feature(data)
+	- const { header, list } = data;
+	+b('section').feature&attributes(attributes)
+		+e('header').header.header-feature__
+			+e('h1').title= header.title
+			+e('p').desc= header.desc
+
+		if header.img
+			- const { src, alt } = header.img;
+			+e('picture').image
+				source(
+					media='(min-width: 1200px)',
+					srcset=`${src}--desktop.jpg 1x, ${src}--desktop@2x.jpg 2x`
+					)
+				source(
+					media='(min-width: 768px)',
+					srcset=`${src}--tablet.jpg 1x, ${src}--tablet@2x.jpg 2x`
+					)
+				source(
+					media='(max-width: 767px)',
+					srcset=`${src}--mobile.jpg 1x, ${src}--mobile@2x.jpg 2x`
+					)
+				img(
+					src=`${src}--desktop.jpg`,
+					type='img/jpeg',
+					alt=alt
+				)
+
+		if list
+			each item in list
+				+e('ul').list.list-feature__
+					!= pugHelpers.Icon.call(locals, {iconName: `icon--${item.icon}`, className: 'list-feature__icon', iconWidth: '76', iconHeight: '76'})
+					+e.item
+						h2= item.caption
+						p= item.text
+
+

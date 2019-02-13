@@ -1,6 +1,8 @@
 .features {
-    position: relative;
-
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
+
+    &__intro {
+        position: relative;
+    }
 }
