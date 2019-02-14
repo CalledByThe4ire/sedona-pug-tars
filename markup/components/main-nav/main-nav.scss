@@ -5,9 +5,10 @@
     background-color: #ffffff;
 
     &__toggler {
+        z-index: 10;
         position: relative;
         right: $offset--mobile;
-        z-index: 5;
+
         align-self: flex-end;
     }
 
