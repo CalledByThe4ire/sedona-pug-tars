@@ -1,6 +1,7 @@
 .page {
     &__wrapper {
         position: relative;
+        overflow: hidden;
 
         &::before {
             content: '';
@@ -24,6 +25,7 @@
 
     &.js-dropdown {
         & .main-nav__dropdown {
+            z-index: 5;
             position: fixed;
             top: 0;
             right: 0;
