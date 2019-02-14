@@ -7,7 +7,7 @@ mixin feature(data)
 
 		if header.img
 			- const { src, alt } = header.img;
-			+e('picture').image
+			picture
 				source(
 					media='(min-width: 1200px)',
 					srcset=`${src}--desktop.jpg 1x, ${src}--desktop@2x.jpg 2x`
@@ -20,10 +20,9 @@ mixin feature(data)
 					media='(max-width: 767px)',
 					srcset=`${src}--mobile.jpg 1x, ${src}--mobile@2x.jpg 2x`
 					)
-				img(
-					src=`${src}--desktop.jpg`,
-					type='img/jpeg',
-					alt=alt
+				+e.image(
+					src=`${src}--desktop.jpg`
+					alt= alt
 				)
 
 		if list
