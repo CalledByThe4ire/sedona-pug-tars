@@ -1,0 +1,42 @@
+.feature-list-item {
+    position: relative;
+
+    &__inner {
+        display: flex;
+        flex-flow: column nowrap;
+        margin-left: 7rem;
+    }
+
+    &__icon {
+        position: absolute;
+        top: 0;
+        left: $offset--mobile;
+
+        width: 36px;
+        height: 36px;
+
+        transform: translateY(calc(-50% + 1rem));
+    }
+
+    &__caption,
+    &__text {
+        text-transform: uppercase;
+    }
+
+    &__caption {
+        margin: 0;
+        margin-bottom: 1.5rem;
+        padding: 0;
+
+        font-size: 1.8rem;
+        line-height: 2.6rem;
+    }
+
+    &__text {
+        margin: 0;
+        padding: 0;
+
+        font-size: $font-size;
+        line-height: $leading;
+    }
+}

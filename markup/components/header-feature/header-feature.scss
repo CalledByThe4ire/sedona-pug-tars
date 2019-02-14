@@ -1,0 +1,55 @@
+.header-feature {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    &__title,
+    &__description {
+        margin: 0;
+        padding: 0;
+    }
+
+    &__index,
+    &__description {
+        font-size: $font-size;
+        line-height: $leading;
+    }
+
+    &__title {
+        font-size: 1.8rem;
+        line-height: 2.6rem;
+        text-transform: uppercase;
+    }
+
+    &__index {
+        position: relative;
+
+        display: inline-block;
+        @include margin-y(0.75rem);
+        @include padding-x(1.5rem);
+
+        &::before,
+        &::after {
+            content: "—";
+
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &::before {
+            left: 0;
+        }
+
+        &::after {
+            right: 0;
+        }
+    }
+
+    &__description {
+        text-transform: uppercase;
+    }
+}

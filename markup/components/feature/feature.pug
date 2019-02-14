@@ -1,9 +1,10 @@
-mixin feature(data)
+mixin feature(data, idx)
 	- const { header, list } = data;
 	+b('section').feature&attributes(attributes)
 		+e('header').header.header-feature__
 			+e('h1').title= header.title
-			+e('p').desc= header.desc
+			+e('span').index №#{idx}
+			+e('p').description!= header.desc
 
 		if header.img
 			- const { src, alt } = header.img;
@@ -26,11 +27,12 @@ mixin feature(data)
 				)
 
 		if list
-			each item in list
-				+e('ul').list.list-feature__
-					!= pugHelpers.Icon.call(locals, {iconName: `icon--${item.icon}`, className: 'list-feature__icon', iconWidth: '76', iconHeight: '76'})
-					+e.item
-						h2= item.caption
-						p= item.text
+			+e('ul').list
+				each item in list
+					+e.list-item.feature-list-item__
+						!= pugHelpers.Icon.call(locals, {iconName: `icon--${item.icon}`, className: 'feature-list-item__icon', iconWidth: '36', iconHeight: '36'})
+						+e.inner
+							+e('h2').caption= item.caption
+							+e('p').text!= item.text
 
 
