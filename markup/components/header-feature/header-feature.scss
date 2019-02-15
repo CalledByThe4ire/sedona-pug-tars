@@ -19,17 +19,33 @@
     }
 
     &__title {
+        margin-top: auto;
+
         font-size: 1.8rem;
         line-height: 2.6rem;
         text-transform: uppercase;
+
+        @media #{$tab-desk} {
+            margin-top: initial;
+            font-size: 2.1rem;
+
+            & > span {
+                display: block;
+            }
+        }
     }
 
     &__index {
         position: relative;
 
         display: inline-block;
-        @include margin-y(0.75rem);
+        @include margin-y(1rem);
         @include padding-x(1.5rem);
+
+        @media #{$tab-desk} {
+            margin-top: 0.5rem;
+            margin-bottom: 2.5rem;
+        }
 
         &::before,
         &::after {
@@ -37,7 +53,7 @@
 
             position: absolute;
             top: 50%;
-            transform: translateY(-50%);
+            transform: translateY(calc(-50% - 1px));
         }
 
         &::before {
@@ -50,6 +66,13 @@
     }
 
     &__description {
+        margin: 0;
+        margin-bottom: auto;
+        padding: 0;
         text-transform: uppercase;
+
+        @media #{$tab-desk} {
+            margin-bottom: initial;
+        }
     }
 }

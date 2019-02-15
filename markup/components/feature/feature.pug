@@ -2,7 +2,7 @@ mixin feature(data, idx)
 	- const { header, list } = data;
 	+b('section').feature&attributes(attributes)
 		+e('header').header.header-feature__
-			+e('h1').title= header.title
+			+e('h1').title!= header.title
 			+e('span').index №#{idx}
 			+e('p').description!= header.desc
 
