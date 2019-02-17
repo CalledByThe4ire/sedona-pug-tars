@@ -1,3 +1,5 @@
+include ../map/map.pug
+
 mixin search(data)
 	+b('article').search&attributes(attributes)
 		+e('div').inner
@@ -6,3 +8,4 @@ mixin search(data)
 			+e('p').text
 				| Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в&nbsp;седоне
 			+e('button').btn Найти гостиницу
+		+map()(class='search__map js-map', data-latitude='34.869497', data-longitude='-111.760186')

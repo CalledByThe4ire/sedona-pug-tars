@@ -1,5 +1,6 @@
 .search {
     display: flex;
+    flex-flow: column wrap;
     justify-content: center;
 
     background-color: #ffffff;
@@ -9,12 +10,15 @@
         flex-flow: column wrap;
         justify-content: center;
         align-items: center;
+        flex-basis: 100%;
         @include padding-x($offset--mobile);
         padding-top: 3rem;
         padding-bottom: 5rem;
 
         @media #{$tab-desk} {
+            align-self: center;
             padding-top: 6rem;
+            padding-bottom: 6rem;
             @include padding-x(initial);
             max-width: 46rem;
         }
