@@ -1,0 +1,6 @@
+mixin socials(data)
+	+b('ul').socials&attributes(attributes)
+		each val in data
+			+e('li').item
+				+e.link(href= val.href)
+					!= pugHelpers.Icon.call(locals, {iconName: `icon--${val.name}`, className: 'copyright__icon', iconWidth: '18', iconHeight: '18'})

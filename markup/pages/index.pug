@@ -2,6 +2,7 @@ extends _template.pug
 include ../components/page-header/page-header.pug
 include ../components/features/features.pug
 include ../components/search/search.pug
+include ../components/page-footer/page-footer.pug
 
 block append data
 	- const [ activePageData ] = getActivePageData('index');
@@ -15,5 +16,6 @@ block content
 		+page-header(activePageData, 'page-header')
 		+features(features, activePageData, 'features')
 		+search
+		+page-footer(pageFooter)
 block prepend scripts
 	script(src='https://api-maps.yandex.ru/2.1/?apikey=fbae4b81-c7a0-4f58-828a-4f873520dc28&lang=ru_RU')
