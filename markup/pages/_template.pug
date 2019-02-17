@@ -8,9 +8,11 @@ doctype html
 html(class="no-js", lang="ru")
 	include ../components/head/head.pug
 	+page
-		block content
+	block content
+	block scripts
 		script(src='%=static=%js/separate-js/svg4everybody.min.js')
 		script svg4everybody();
 
 		//- Main scripts. You can replace it, but I recommend you to leave it here
 		script(src='%=static=%js/main%=hash=%%=min=%.js')
+
