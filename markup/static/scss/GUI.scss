@@ -1,2 +1,48 @@
 // GUI stylies of the project
 // For example, styles of the links, buttons and so on.
+
+link {
+    color: $link-color;
+    text-decoration: none;
+
+    background-color: transparent;
+
+    &:link,
+    &:visited {
+        color: $link-color;
+    }
+
+    &:hover {
+        text-decoration: none;
+        color: $link-color--hover;
+
+        transition-duration: 0.3s;
+    }
+
+    &:active {
+        color: $link-color--down;
+        transition-duration: 0s;
+    }
+}
+
+button:not([class^="controls-panel"]) {
+    display: flex;
+    justify-content: center;
+    min-width: 320px;
+    @include padding-x(4rem);
+    @include padding-y(1.5rem);
+
+    font-family: $font-family--sans-serif;
+    font-size: 2.1rem;
+    line-height: 2.6rem;
+    font-weight: 700;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+
+    background-color: $color-secondary;
+    border: 0;
+    cursor: pointer;
+
+}

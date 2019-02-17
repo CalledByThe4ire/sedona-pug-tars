@@ -42,30 +42,6 @@ img {
     border: 0;
 }
 
-link {
-    color: $link-color;
-    text-decoration: none;
-
-    background-color: transparent;
-
-    &:link,
-    &:visited {
-        color: $link-color;
-    }
-
-    &:hover {
-        text-decoration: none;
-        color: $link-color--hover;
-
-        transition-duration: 0.3s;
-    }
-
-    &:active {
-        color: $link-color--down;
-        transition-duration: 0s;
-    }
-}
-
 table {
     width: 100%;
 
