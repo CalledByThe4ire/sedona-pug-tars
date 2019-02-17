@@ -1,6 +1,7 @@
 extends _template.pug
 include ../components/page-header/page-header.pug
 include ../components/features/features.pug
+include ../components/search/search.pug
 
 block append data
 	- const [ activePageData ] = getActivePageData('index');
@@ -13,4 +14,5 @@ block content
 
 	+page-header(activePageData, 'page-header')
 	+features(features, activePageData, 'features')
+	+search
 

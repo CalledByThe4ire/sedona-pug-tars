@@ -1,0 +1,68 @@
+.search {
+    display: flex;
+    justify-content: center;
+
+    background-color: #ffffff;
+
+    &__inner {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        @include padding-x($offset--mobile);
+        padding-top: 3rem;
+        padding-bottom: 5rem;
+
+        @media #{$tab-desk} {
+            padding-top: 6rem;
+            @include padding-x(initial);
+            max-width: 46rem;
+        }
+
+        @media #{$desktop} {
+            padding-bottom: 6.5rem;
+        }
+    }
+
+    &__heading {
+        & h1 {
+            padding: 0;
+            margin: 0;
+            margin-bottom: 2rem;
+
+            font-size: 2.1rem;
+            line-height: 2.6rem;
+            text-transform: uppercase;
+
+            @media #{$tab-desk} {
+                margin-bottom: 3rem;
+                font-size: 3rem;
+            }
+        }
+    }
+
+    &__text {
+        padding: 0;
+        margin: 0;
+        margin-bottom: 3.5rem;
+
+        font-size: $font-size;
+        line-height: 2.4rem;
+        text-align: center;
+        text-transform: uppercase;
+
+        @media #{$tablet} {
+            margin-bottom: 4rem;
+        }
+
+        @media #{$desktop} {
+            margin-bottom: 5rem;
+        }
+    }
+
+    &__btn {
+        @media #{$tab-desk} {
+            width: 100%;
+        }
+    }
+}
