@@ -1,7 +1,7 @@
 // GUI stylies of the project
 // For example, styles of the links, buttons and so on.
 
-a {
+.link {
     color: $link-color;
     text-decoration: none;
 
@@ -25,7 +25,7 @@ a {
     }
 }
 
-button:not([class^="controls-panel"]) {
+.btn {
     display: flex;
     justify-content: center;
     min-width: 320px;
