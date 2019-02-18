@@ -11,4 +11,8 @@
         height: 46px;
         background-color: $color-secondary;
     }
+
+    &__link {
+        display: flex;
+    }
 }

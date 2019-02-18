@@ -4,6 +4,10 @@
 
     background-color: #ffffff;
 
+    & > * {
+        display: flex;
+    }
+
     &__hashtag {
         padding-bottom: 3.5rem;
 
