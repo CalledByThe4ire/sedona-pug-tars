@@ -2,7 +2,11 @@
 import { setAttributes } from 'static/js/libraries/utils';
 
 document.addEventListener('DOMContentLoaded', () => {
-    const togglerMod = { close: '--is-closed', open: '--is-opened' };
+    const togglerMod = {
+        close: '--is-closed',
+        open: '--is-opened',
+        fixed: '--is-fixed'
+    };
     const icon = document.querySelector('.js-toggler use');
     const iconMod = { close: 'menu', open: 'cross' };
 
@@ -17,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const toggle = evt.target;
         if (toggle.classList.contains(`toggler${togglerMod.open}`)) {
             toggle.classList.remove(`toggler${togglerMod.open}`);
+            toggle.classList.remove(`toggler${togglerMod.fixed}`);
             toggle.classList.add(`toggler${togglerMod.close}`);
             setAttributes(icon, {
                 'xlink:href': `#icon--${iconMod.close}`
@@ -24,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (toggle.classList.contains(`toggler${togglerMod.close}`)) {
             toggle.classList.remove(`toggler${togglerMod.close}`);
             toggle.classList.add(`toggler${togglerMod.open}`);
+            toggle.classList.add(`toggler${togglerMod.fixed}`);
             setAttributes(icon, {
                 'xlink:href': `#icon--${iconMod.open}`
             });

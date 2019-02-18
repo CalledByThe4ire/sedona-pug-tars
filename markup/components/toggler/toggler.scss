@@ -1,5 +1,4 @@
-.toggler,
-button.toggler {
+.toggler {
     display: none;
     padding: 0;
     margin: 0;
@@ -25,6 +24,11 @@ button.toggler {
             & + .main-nav__dropdown {
                 display: none;
             }
+        }
+
+        &--is-fixed {
+            position: fixed;
+            top: 17px; // (link' height: 56px - icon' height: 22) / 2
         }
     }
 
