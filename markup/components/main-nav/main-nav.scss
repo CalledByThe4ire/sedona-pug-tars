@@ -6,7 +6,8 @@
 
     &__toggler {
         z-index: 15;
-        position: relative;
+        position: fixed;
+        top: 17px; // (link' height: 56px - icon' height: 22) / 2
         right: $offset--mobile;
 
         align-self: flex-end;
