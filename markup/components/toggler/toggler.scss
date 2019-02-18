@@ -1,7 +1,10 @@
-.toggler {
-    display: none !important;
-    margin: 0;
+.toggler,
+button.toggler {
+    display: none;
     padding: 0;
+    margin: 0;
+    @include margin-y(auto);
+    min-width: initial;
 
     border: 0;
     outline: none;
@@ -11,7 +14,6 @@
 
     @media #{$mobile} {
         display: flex;
-        @include margin-y(auto);
 
         &--is-opened {
             & + .main-nav__dropdown {
