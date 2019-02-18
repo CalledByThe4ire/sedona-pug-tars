@@ -6,5 +6,6 @@ mixin page-footer(data)
 		+e('span').hashtag= data.hashtag
 		+socials(socialsList)(class='page-footer__socials')
 		+e.copyright.copyright__
-			+e.link(href='https://htmlacademy.ru')= data.copyright
-				!= pugHelpers.Icon.call(locals, {iconName: 'icon--htmlacademy', className: 'copyright__icon', iconWidth: '27', iconHeight: '34'})
+				span= data.copyright
+				+e.link(href='https://htmlacademy.ru')
+					!= pugHelpers.Icon.call(locals, {iconName: 'icon--htmlacademy', className: 'copyright__icon', iconWidth: '27', iconHeight: '34'})

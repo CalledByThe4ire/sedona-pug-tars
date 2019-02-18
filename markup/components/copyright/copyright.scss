@@ -1,7 +1,18 @@
 .copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     &__link {
         display: flex;
-        justify-content: center;
-        align-items: center;
+
+        &:hover {
+            --base-color: #{$color-secondary};
+        }
+
+        &:active {
+            --base-color: initial;
+            opacity: 0.3;
+        }
     }
 }

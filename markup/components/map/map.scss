@@ -6,4 +6,8 @@
     margin: 0;
     margin-bottom: 3.5rem;
     padding: 0;
+
+    @media #{$tab-desk} {
+        margin-bottom: initial;
+    }
 }
