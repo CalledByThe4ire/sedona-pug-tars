@@ -45,4 +45,19 @@ button:not([class^="controls-panel"]) {
     border: 0;
     cursor: pointer;
 
+    &:hover {
+        background-color: darken($color-secondary, 10%);
+        transition-duration: 0.3s;
+    }
+
+    &:active {
+        color: rgba(#ffffff, 0.3);
+        background-color: darken($color-secondary, 20%);
+        transition-duration: 0.3s;
+    }
+
+    &:disabled {
+        background-color: $body-bg;
+    }
+
 }
