@@ -61,6 +61,13 @@
   list-style: none;
 }
 
+@mixin icon-colors($fallback: black) {
+    fill: $fallback;
+    @content;
+  }
+
+
+  
 // Project-Specific Mixins.
 
 // Set background-color
