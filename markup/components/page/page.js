@@ -9,13 +9,13 @@ document.addEventListener('DOMContentLoaded', () => {
      */
     const matchMedia = () => {
         if (mqMobile.matches) {
-            if (!page.classList.contains('js-dropdown')) {
-                page.classList.add('js-dropdown');
+            if (!page.classList.contains('page--dropdown')) {
+                page.classList.add('page--dropdown');
             }
         }
         if (mqTabDesk.matches) {
-            if (page.classList.contains('js-dropdown')) {
-                page.classList.remove('js-dropdown');
+            if (page.classList.contains('page--dropdown')) {
+                page.classList.remove('page--dropdown');
             }
         }
     };
@@ -37,10 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (
             target ===
             document
-                .querySelector('.js-toggler')
+                .querySelector('.toggler')
                 .classList.contains('toggler--is-opened')
         ) {
-            page.classList.toggle('js-dropdown');
+            page.classList.toggle('page--dropdown');
         }
     };
 

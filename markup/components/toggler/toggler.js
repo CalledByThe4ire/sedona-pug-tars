@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         open: '--is-opened',
         fixed: '--is-fixed'
     };
-    const icon = document.querySelector('.js-toggler use');
+    const icon = document.querySelector('.toggler use');
     const iconMod = { close: 'menu', open: 'cross' };
 
     /**
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    document.querySelector('.js-toggler').addEventListener('click', evt => {
+    document.querySelector('.toggler').addEventListener('click', evt => {
         changeTogglerAttrs(evt);
     });
 });
