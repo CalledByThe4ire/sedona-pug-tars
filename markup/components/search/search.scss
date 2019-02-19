@@ -65,6 +65,10 @@
     }
 
     &__btn {
+        @include btn-size;
+        @include btn-bg;
+        @include btn-text-format;
+
         @media #{$tab-desk} {
             width: 100%;
         }

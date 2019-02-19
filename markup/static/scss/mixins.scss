@@ -2,61 +2,110 @@
 
 // Set element size
 @mixin size($width, $height: $width) {
-    width: $width;
-    height: $height;
+  width: $width;
+  height: $height;
+}
+
+// Set margin-left / margin-right
+@mixin margin-x($margin) {
+  margin-right: $margin;
+  margin-left: $margin;
+}
+
+// Set margin-top / margin-bottom
+@mixin margin-y($margin) {
+  margin-top: $margin;
+  margin-bottom: $margin;
+}
+
+// Set pading-left / padding-right
+@mixin padding-x($padding) {
+  padding-right: $padding;
+  padding-left: $padding;
+}
+
+// Set padding-top / padding-bottom
+@mixin padding-y($padding) {
+  padding-top: $padding;
+  padding-bottom: $padding;
+}
+
+// Set fixed ontainer
+@mixin container() {
+  margin: 0 auto;
+
+  @include padding-x($offset--mobile);
+  min-width: $container--min;
+  max-width: $container--max;
+
+  @media #{$tablet} {
+    @include padding-x($offset--tablet);
   }
 
-  // Set margin-left / margin-right
-  @mixin margin-x($margin) {
-    margin-right: $margin;
-    margin-left: $margin;
+  @media #{$desktop} {
+    @include padding-x($offset--desktop);
+  }
+}
+
+// Set fluid container
+@mixin container-fluid() {
+  margin: 0 auto;
+  width: 100%;
+}
+
+// Clear default list' styles
+@mixin list-clear() {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+// Project-Specific Mixins.
+
+// Set background-color
+@mixin btn-bg($svg: false) {
+  background-color: $color-secondary;
+
+  &:hover {
+    background-color: darken($color-secondary, 10%);
+    transition-duration: 0.3s;
   }
 
-  // Set margin-top / margin-bottom
-  @mixin margin-y($margin) {
-    margin-top: $margin;
-    margin-bottom: $margin;
-  }
-
-  // Set pading-left / padding-right
-  @mixin padding-x($padding) {
-    padding-right: $padding;
-    padding-left: $padding;
-  }
-
-  // Set padding-top / padding-bottom
-  @mixin padding-y($padding) {
-    padding-top: $padding;
-    padding-bottom: $padding;
-  }
-
-  // Set fixed ontainer
-  @mixin container() {
-    margin: 0 auto;
-
-    @include padding-x($offset--mobile);
-    min-width: $container--min;
-    max-width: $container--max;
-
-    @media #{$tablet} {
-      @include padding-x($offset--tablet);
+  &:active {
+    @if $svg {
+      & svg {
+        opacity: 0.3;
+      }
+    } @else {
+      color: rgba(#ffffff, 0.3);
     }
-
-    @media #{$desktop} {
-      @include padding-x($offset--desktop);
-    }
+    background-color: darken($color-secondary, 20%);
+    transition-duration: 0.3s;
   }
 
-  // Set fluid container
-  @mixin container-fluid() {
-    margin: 0 auto;
-    width: 100%;
+  &:disabled {
+    background-color: $body-bg;
   }
+}
 
-  // Clear default list' styles
-  @mixin list-clear() {
-    margin: 0;
-    padding: 0;
+@mixin btn-text-format() {
+  font-family: $font-family--sans-serif;
+  font-size: 2.1rem;
+  line-height: 2.6rem;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
 
-    list-style: none;
-  }
+@mixin btn-size(
+    $paddingX: 4rem,
+    $paddingY: 1.5rem,
+    $minWidth: $container--min
+    ) {
+  min-width: $minWidth;
+  @include padding-x($paddingX);
+  @include padding-y($paddingY);
+}
