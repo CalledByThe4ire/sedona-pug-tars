@@ -94,12 +94,10 @@
 
             background-color: transparent;
 
-            #{$root}__item:first-child,
-            #{$root}__item:not(:first-child),
-            #{$root}__item:last-child {
-                & {
-                    box-shadow: none;
-                }
+            #{$root}__item:first-child &,
+            #{$root}__item:not(:first-child) &,
+            #{$root}__item:last-child & {
+                box-shadow: none;
             }
 
             &:hover,
