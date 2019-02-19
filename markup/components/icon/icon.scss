@@ -17,22 +17,30 @@
   }
 
   &--cross {
-    fill: #ffffff;
+    @include icon-colors() {
+      --icon-color: #ffffff;
+    }
   }
 
   &--menu {
-    fill: $color-secondary;
+    @include icon-colors() {
+      --icon-color: #{$color-secondary};
+    }
   }
 
   &--house,
   &--gift,
   &--burger {
-      fill: $color-secondary;
+    @include icon-colors() {
+      --icon-color: #{$color-secondary};
+    }
   }
 
   &--facebook,
   &--twitter,
   &--youtube {
-      fill: #ffffff;
+    @include icon-colors() {
+      --icon-color: #ffffff;
+    }
   }
 }

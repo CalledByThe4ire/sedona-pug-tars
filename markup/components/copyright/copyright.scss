@@ -7,11 +7,15 @@
         display: flex;
 
         &:hover {
-            --base-color: #{$color-secondary};
+            @include icon-colors() {
+                --icon-color: #{$color-secondary};
+            };
         }
 
         &:active {
-            --base-color: initial;
+            @include icon-colors() {
+                --icon-color: initial;
+            };
             opacity: 0.3;
         }
     }

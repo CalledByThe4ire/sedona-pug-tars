@@ -1,6 +1,6 @@
 <svg
     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 186.644 96.426" preserveAspectRatio="xMinYMin meet">
-    <g class="icon--logo">
+    <g class="icon icon--logo">
         <path class="icon--logo__outer-contour" fill="#81B3D3" d="M186.644 0H0l80.487 90.474c7.06 7.936 18.61 7.936 25.67 0L186.643 0h.001z"/>
         <path fill="#23A9E1" d="M43.546.705l49.523 58.35 49.324-57.997L43.546.705z"/>
         <path class="icon--logo__clouds" fill="#FFF" d="M122.327 17.316l-15.187.084c6.001-6.931 8.697-6.19 15.187-.084zm-42.771 5.358h28.277c-1.985-1.233-6.708-7.06-9.308-4.893-.212.178-7.505-8.848-12.296-4.5-4.179 3.8-6.12-.497-10.857 2.512-5.399 3.57 4.184 6.88 4.184 6.88v.001z"/>
