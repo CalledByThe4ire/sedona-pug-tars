@@ -62,12 +62,10 @@
 }
 
 @mixin icon-colors($fallback: black) {
-    fill: $fallback;
-    @content;
-  }
+  fill: $fallback;
+  @content;
+}
 
-
-  
 // Project-Specific Mixins.
 
 // Set background-color
@@ -107,11 +105,7 @@
   letter-spacing: 0.1rem;
 }
 
-@mixin btn-size(
-    $paddingX: 4rem,
-    $paddingY: 1.5rem,
-    $minWidth: $container--min
-    ) {
+@mixin btn-size($paddingX: 4rem, $paddingY: 1.5rem, $minWidth: $container--min) {
   min-width: $minWidth;
   @include padding-x($paddingX);
   @include padding-y($paddingY);
