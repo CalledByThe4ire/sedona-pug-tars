@@ -3,7 +3,7 @@ include ../socials/socials.pug
 mixin page-footer(data)
 	+b('footer').page-footer&attributes(attributes)
 		- const { socialsList } = data;
-		+e('span').hashtag= data.hashtag
+		+e('strong').hashtag= data.hashtag
 		+socials(socialsList)(class='page-footer__socials')
 		+e.copyright.copyright__
 				span= data.copyright
