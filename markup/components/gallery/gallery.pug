@@ -1,0 +1,7 @@
+include ../intro/intro.pug
+
+mixin gallery(data, activePageData, parentBlockName)
+	- const { name } = activePageData;
+	+b('main').gallery&attributes(attributes)
+		+intro(intro, name)(class=`${parentBlockName}__intro`)
+		block
