@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+/* eslint-disable no-undef, no-console */
 
 const init = () => {
     const map = document.querySelector('.js-map');
@@ -25,4 +25,6 @@ const init = () => {
     myMap.geoObjects.add(myPlacemark);
 };
 
-ymaps.ready(init);
+if (typeof ymaps === 'object') {
+    ymaps.ready(init);
+}
