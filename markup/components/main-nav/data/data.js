@@ -6,7 +6,7 @@ const data = {
             title: 'Главная'
         },
         gallery: {
-            href: '#',
+            href: 'gallery.html',
             title: 'Фото и видео'
         },
         feedback: {
