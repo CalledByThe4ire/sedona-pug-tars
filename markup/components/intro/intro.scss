@@ -7,14 +7,13 @@
     @include padding-x($offset--mobile);
 
     background-color: #ffffff;
+    overflow: hidden;
 
     &::before,
     &::after {
         content: '';
         position: absolute;
         display: block;
-
-        overflow: hidden;
     }
 
     &::before {
