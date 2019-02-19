@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const mainNavItems = document.querySelector('.main-nav .list__item');
+    const mainNavItems = Array.from(
+        document.querySelectorAll('.main-nav .list__link')
+    );
     const mqMobile = window.matchMedia('only screen and (max-width: 767px)');
     const mqTabDesk = window.matchMedia('only screen and (min-width: 768px)');
 
@@ -9,14 +11,14 @@ document.addEventListener('DOMContentLoaded', () => {
      */
     const matchMedia = () => {
         if (mqMobile.matches) {
-            Array.of(mainNavItems).forEach(item => {
+            mainNavItems.forEach(item => {
                 if (item.classList.contains('link')) {
                     item.classList.remove('link');
                 }
             });
         }
         if (mqTabDesk.matches) {
-            Array.of(mainNavItems).forEach(item => {
+            mainNavItems.forEach(item => {
                 if (!item.classList.contains('link')) {
                     item.classList.add('link');
                 }
