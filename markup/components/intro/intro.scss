@@ -47,6 +47,13 @@
         line-height: 2.6rem;
         text-align: center;
         text-transform: uppercase;
+
+        @media #{$tab-desk} {
+
+            & span {
+                display: block;
+            }
+        }
     }
 
     &__heading {
@@ -63,10 +70,6 @@
         @media #{$tab-desk} {
             padding-top: 0;
             font-size: 2.1rem;
-        }
-
-        & span {
-            display: block;
         }
     }
 
