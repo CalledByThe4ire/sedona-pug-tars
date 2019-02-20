@@ -1,19 +1,9 @@
 .page {
     &__wrapper {
         position: relative;
+        overflow: hidden;
 
-        &::before {
-            content: '';
-
-            z-index: -5;
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-
-            box-shadow: 0 0 20px rgba($color-primary, 0.2);
-        }
+        box-shadow: 0 0 20px rgba($color-primary, 0.2);
 
         @media #{$desktop} {
             @include container();
