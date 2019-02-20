@@ -7,8 +7,7 @@ const data = {
                 desc:
                     'Седона не&nbsp;аттракцион для туристов, там течет своя жизнь',
                 img: {
-                    src:
-                        '%=static=%img/assets/features/feature-city__back-index',
+                    src: '%=static=%img/assets/features/feature-city',
                     alt: 'Седона'
                 }
             },
@@ -38,8 +37,7 @@ const data = {
                 title: 'Там есть <span>мост дьявола</span>',
                 desc: 'Да, по нему можно пройти! Если вы осмелитесь, конечно',
                 img: {
-                    src:
-                        '%=static=%img/assets/features/feature-bridge__back-index',
+                    src: '%=static=%img/assets/features/feature-bridge',
                     alt: 'Мост дьявола'
                 }
             }
