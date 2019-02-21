@@ -7,5 +7,6 @@ mixin gallery(data, activePageData, parentBlockName)
 		+intro(intro, name)(class=`${parentBlockName}__intro`)
 		+e('ul').list
 			each val in data
-				+e('li').item
+				- const { variable } = val.img;
+				+e('li').item(class=`${variable ? '--variable' : ''}`)
 					+preview(val)

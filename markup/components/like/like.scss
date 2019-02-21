@@ -4,6 +4,10 @@
     &__icon {
         margin-right: 1.5rem;
         opacity: 0.3;
+
+        @media #{$tablet} {
+            margin-right: 1rem;
+        }
     }
 
     &__counter {

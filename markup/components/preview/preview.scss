@@ -2,8 +2,6 @@
     display: flex;
     flex-flow: column wrap;
     margin: 0;
-    @include padding-x($offset--mobile);
-    @include padding-y(2.5rem);
 
     & picture {
         display: flex;
@@ -13,12 +11,28 @@
     &__image {
         object-fit: cover;
         margin-bottom: 1.5rem;
+
+        @media #{$tab-desk} {
+            margin-bottom: initial;
+        }
     }
 
     &__description,
     &__heading {
         margin: 0;
         padding: 0;
+    }
+
+    &__description {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+
+        @media #{$tab-desk} {
+            flex-flow: row nowrap;
+            padding: 2rem;
+            background-color: #f2f2f2;
+        }
     }
 
     &__heading {
@@ -28,9 +42,11 @@
     }
 
     &__author {
-        margin-bottom: 0.5rem;
-
         font-size: $font-size;
         line-height: 2.4rem;
+    }
+
+    &__like {
+        margin-left: auto;
     }
 }

@@ -8,6 +8,10 @@
 
     background-color: #ffffff;
 
+    @media #{$tab-desk} {
+        min-height: 200px;
+    }
+
     &::before,
     &::after {
         content: '';
