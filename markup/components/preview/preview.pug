@@ -1,7 +1,7 @@
 include ../like/like.pug
 
 mixin preview(data)
-	+b('figure').post&attributes(attributes)
+	+b('figure').preview&attributes(attributes)
 		- const { src, alt, variable } = data.img;
 		- const { title, author, counter } = data.description;
 		if variable
