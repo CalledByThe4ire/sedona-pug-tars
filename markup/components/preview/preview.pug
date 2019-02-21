@@ -28,7 +28,6 @@ mixin preview(data)
 				alt= alt
 			)
 		+e('figcaption').description
-			+e('header').heading
-				h1= title
-				p= author
+			+e('h2').heading= title
+			+e('div').author= author
 			+like(counter)
