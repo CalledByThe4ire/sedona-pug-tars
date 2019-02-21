@@ -4,7 +4,6 @@
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    min-height: 200px;
     @include padding-x($offset--mobile);
 
     background-color: #ffffff;
