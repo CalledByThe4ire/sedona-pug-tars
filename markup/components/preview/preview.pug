@@ -1,6 +1,6 @@
 include ../like/like.pug
 
-mixin post(data)
+mixin preview(data)
 	+b('figure').post&attributes(attributes)
 		- const { src, alt, variable } = data.img;
 		- const { title, author, counter } = data.description;

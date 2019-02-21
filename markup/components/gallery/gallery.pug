@@ -1,5 +1,5 @@
 include ../intro/intro.pug
-include ../post/post.pug
+include ../preview/preview.pug
 
 mixin gallery(data, activePageData, parentBlockName)
 	- const { name } = activePageData;
@@ -7,4 +7,4 @@ mixin gallery(data, activePageData, parentBlockName)
 		+intro(intro, name)(class=`${parentBlockName}__intro`)
 		+e('ul').list
 			each val in data
-				+post(val)(class='gallery__item')
+				+preview(val)(class='gallery__item')
