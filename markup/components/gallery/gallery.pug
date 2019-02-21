@@ -7,4 +7,5 @@ mixin gallery(data, activePageData, parentBlockName)
 		+intro(intro, name)(class=`${parentBlockName}__intro`)
 		+e('ul').list
 			each val in data
-				+preview(val)(class='gallery__item')
+				+e('li').item
+					+preview(val)

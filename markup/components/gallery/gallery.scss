@@ -1,3 +1,24 @@
 .gallery {
     display: block;
+    background-color: #ffffff;
+
+    &__intro {
+        margin-bottom: 2rem;
+        &::after {
+            display: none !important;
+        }
+    }
+
+
+    &__list {
+        position: relative;
+        z-index: 5;
+
+        @include list-clear();
+    }
+
+    &__item {
+        display: block;
+        border-top: 1px solid #e5e5e5;
+    }
 }

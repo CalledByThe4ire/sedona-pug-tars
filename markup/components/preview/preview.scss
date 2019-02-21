@@ -1,3 +1,36 @@
 .preview {
-    display: block;
+    display: flex;
+    flex-flow: column wrap;
+    margin: 0;
+    @include padding-x($offset--mobile);
+    @include padding-y(2.5rem);
+
+    & picture {
+        display: flex;
+        flex-flow: column wrap;
+    }
+
+    &__image {
+        object-fit: cover;
+        margin-bottom: 1.5rem;
+    }
+
+    &__description,
+    &__heading {
+        margin: 0;
+        padding: 0;
+    }
+
+    &__heading {
+        font-size: $font-size;
+        line-height: 2.4rem;
+        text-transform: uppercase;
+    }
+
+    &__author {
+        margin-bottom: 0.5rem;
+
+        font-size: $font-size;
+        line-height: 2.4rem;
+    }
 }
