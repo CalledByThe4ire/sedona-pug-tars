@@ -3,6 +3,12 @@
     flex-flow: column wrap;
     margin: 0;
 
+    @media #{$desktop} {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 80px;
+    }
+
     & picture {
         display: flex;
         flex-flow: column wrap;
@@ -26,12 +32,19 @@
     &__description {
         display: flex;
         flex-flow: column wrap;
-        align-items: center;
 
         @media #{$tab-desk} {
             flex-flow: row nowrap;
-            padding: 2rem;
-            background-color: #f2f2f2;
+            align-items: center;
+            padding: 1.5rem;
+        }
+    }
+
+    &__inner {
+        margin-bottom: 0.5rem;
+
+        @media #{$tab-desk} {
+            margin-bottom: initial;
         }
     }
 
@@ -47,6 +60,8 @@
     }
 
     &__like {
-        margin-left: auto;
+        @media #{$tab-desk} {
+            margin-left: auto;
+        }
     }
 }

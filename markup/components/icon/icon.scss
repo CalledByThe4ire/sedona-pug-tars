@@ -43,4 +43,12 @@
       --icon-color: #ffffff;
     }
   }
+
+  &--like {
+    @media #{$desktop} {
+      @include icon-colors() {
+        --icon-color: #ffffff;
+      }
+    }
+  }
 }

@@ -1,6 +1,6 @@
 include ../like/like.pug
 
-mixin preview(data)
+mixin preview(data, variable)
 	+b('figure').preview&attributes(attributes)
 		- const { src, alt } = data.img;
 		- const { title, author, counter } = data.description;

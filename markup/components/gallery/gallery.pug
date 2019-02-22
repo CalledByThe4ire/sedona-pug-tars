@@ -9,4 +9,4 @@ mixin gallery(data, activePageData, parentBlockName)
 			each val in data
 				- const { variable } = val.img;
 				+e('li').item(class=`${variable ? '--variable' : ''}`)
-					+preview(val)
+					+preview(val, variable)
