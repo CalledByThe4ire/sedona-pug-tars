@@ -9,3 +9,4 @@ import 'components/logo/logo';
 import 'components/toggler/toggler';
 import 'components/main-nav/main-nav';
 import 'components/map/map';
+import 'components/video/video';

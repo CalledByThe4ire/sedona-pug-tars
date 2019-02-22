@@ -21,10 +21,10 @@ $font-size: 1.4rem !default;
 $leading: 1.5 !default;
 
 $font-family--sans-serif: 'PT Sans', Verdana, Tahoma, 'Helvetica Neue',
-  Helvetica, Arial, sans-serif;
+    Helvetica, Arial, sans-serif;
 $font-family--serif: Georgia, 'Times New Roman', Times, serif;
 $font-family--monospace: 'Courier New', Menlo, Monaco, Consolas,
-  'Liberation Mono', monospace;
+    'Liberation Mono', monospace;
 
 $font-family: $font-family--sans-serif !default;
 
@@ -49,7 +49,28 @@ $offset--mobile: 20px !default;
 $offset--tablet: 50px !default;
 $offset--desktop: 40px !default;
 
-  // http://lostgrid.org/
-  @lost flexbox flex;
-  @lost gutter 0;
+// http://lostgrid.org/
+@lost flexbox flex;
+@lost gutter 0;
 
+// https://github.com/darlanrod/input-range-scss
+// Styling Cross-Browser Compatible Range Inputs with Sass
+// Github: https://github.com/darlanrod/input-range-sass
+// Author: Darlan Rod https://github.com/darlanrod
+// Version 1.5.1
+// MIT License
+$track-color: rgba(255, 255, 255, .2);
+$thumb-color: #ffffff;
+
+$thumb-radius: 50%;
+$thumb-height: 9px;
+$thumb-width: 9px;
+
+$thumb-border-width: 1px;
+$thumb-border-color: #ffffff;
+
+$track-height: 3px;
+$track-border-width: 1px;
+$track-border-color: rgba(255, 255, 255, .2);
+
+$track-radius: 0;

@@ -1,0 +1,129 @@
+.controls-video {
+    $root: &;
+
+    display: grid;
+    grid-template-rows: 45px 66px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+        'p      p p         p         '
+        'replay . subtitles fullscreen';
+
+    @include list-clear();
+    background-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        transparent 45px,
+        #f2f2f2 45px,
+        #f2f2f2 100%
+    );
+
+    @media #{$tab-desk} {
+        background-image: none;
+        background-color: rgba($color-primary, 0.6);
+    }
+
+    @media #{$tab-desk} {
+        grid-template-rows: 93px;
+        grid-template-columns: repeat(23, 1fr);
+        grid-template-areas: '........... replay ..........
+             p p p p p p p p p p p p p p p
+             ......... subtitles .........
+             fullscreen ..................';
+    }
+
+    &__item {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+
+        @media #{$tab-desk} {
+            justify-content: center;
+        }
+
+        &--progress {
+            grid-area: p;
+            place-content: center;
+            @include padding-x($offset--mobile);
+
+            background-color: rgba($color-primary, 0.6);
+
+            @media #{$tab-desk} {
+                @include padding-x(initial);
+                background-color: transparent;
+            }
+
+            & > input[type='range'] {
+                width: 100%;
+                &::range-thumb {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        &--replay {
+            grid-area: replay;
+
+            & #{$root}__link {
+                @include margin-x(auto);
+
+                @media #{$tab-desk} {
+                    @include margin-x(initial);
+                }
+            }
+        }
+
+        &--subtitles {
+            grid-area: subtitles;
+        }
+
+        &--fullscreen {
+            grid-area: fullscreen;
+
+            & #{$root}__link {
+                @include margin-x(auto);
+
+                @media #{$tab-desk} {
+                    @include margin-x(initial);
+                }
+            }
+        }
+    }
+
+    &__link {
+        display: flex;
+
+        @include icon-colors() {
+            --icon-color: #5c6870;
+        }
+
+        &:hover {
+            @include icon-colors() {
+                --icon-color: #333333;
+            }
+            transition-duration: 0.3s;
+        }
+
+        &:active {
+            @include icon-colors() {
+                --icon-color: #333333;
+                opacity: 0.3;
+            }
+            transition-duration: 0s;
+        }
+
+        @media #{$tab-desk} {
+            @include icon-colors() {
+                --icon-color: #ffffff;
+            }
+            &:hover,
+            &:active {
+                @include icon-colors() {
+                    --icon-color: #ffffff;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

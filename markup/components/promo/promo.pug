@@ -1,0 +1,8 @@
+include ../intro/intro.pug
+include ../video/video.pug
+
+mixin promo(data, name)
+	+b('section').promo&attributes(attributes)
+		+intro(data, name)(class='promo__intro')
+		+video()(class='promo__video')
+

@@ -42,6 +42,11 @@
     &:last-child {
         border-top: 1px solid #e5e5e5;
         border-bottom: 1px solid #e5e5e5;
+
+        @media #{$tab-desk} {
+          border-top: none;
+          border-bottom: none;
+        }
     }
 
     @media #{$tab-desk} {

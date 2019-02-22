@@ -1,10 +1,12 @@
 extends _template.pug
 include ../components/page-header/page-header.pug
 include ../components/gallery/gallery.pug
+include ../components/promo/promo.pug
 include ../components/page-footer/page-footer.pug
 
 block append data
 	- const [ activePageData ] = getActivePageData('gallery');
+
 
 block head
 	- pageTitle = 'Sedona';
@@ -14,4 +16,5 @@ block content
 	.page__wrapper
 		+page-header(activePageData, 'page-header')
 		+gallery(gallery, activePageData, 'gallery')
+		+promo(promo, 'intro')
 		+page-footer(pageFooter)
