@@ -1,7 +1,7 @@
 /* eslint-disable no-undef, no-console */
 
 const init = () => {
-    const map = document.querySelector('.js-map');
+    const map = document.querySelector('.map');
     const myMap = new ymaps.Map(map, {
         center: [map.dataset.latitude, map.dataset.longitude],
         zoom: [8],
