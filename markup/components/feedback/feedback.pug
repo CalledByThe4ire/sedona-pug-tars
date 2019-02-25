@@ -1,7 +1,12 @@
 include ../intro/intro.pug
+include ../fieldset/fieldset.pug
 
 mixin feedback(data, activePageData, parentBlockName)
 	- const { name } = activePageData;
 	+b('form').feedback&attributes(attributes)
 		+intro(intro, name)(class=`${parentBlockName}__intro`)
-		block
+		- const keys = Object.keys(data);
+		each key in keys
+			+fieldset(data[key], key)(class=`--${key} __fieldset`)
+
+

@@ -1,3 +1,9 @@
 .feedback {
     display: block;
+
+    &__intro {
+        &::after {
+            display: none !important;
+        }
+    }
 }

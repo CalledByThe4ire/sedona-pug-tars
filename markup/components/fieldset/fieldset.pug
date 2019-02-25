@@ -1,0 +1,17 @@
+mixin fieldset(data, key)
+	+b('fieldset').fieldset&attributes(attributes)
+		- const { title, content } = data;
+		+e('legend').legend= title
+		case key
+			when 'full-name'
+				- const { name, surname, patronymic } = content;
+				- const keys = Object.keys(content);
+
+				each key in keys
+					+e('p').group
+						+e('label').text-field.text-field__
+							span #{content[key].label}:
+							if content[key].isRequired
+								strong: abbr(title='required') *
+							+e('input').input(type='input', placeholder=`${content[key].placeholder}`, required=content[key].isRequired)
+
