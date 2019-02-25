@@ -1,17 +1,31 @@
-mixin fieldset(data, key)
+mixin fieldset(data, modifier)
 	+b('fieldset').fieldset&attributes(attributes)
 		- const { title, content } = data;
+
 		+e('legend').legend= title
-		case key
+		case modifier
 			when 'full-name'
 				- const { name, surname, patronymic } = content;
-				- const keys = Object.keys(content);
 
-				each key in keys
-					+e('p').group
+				each key in Object.keys(content)
+					+e('p').text
 						+e('label').text-field.text-field__
 							span #{content[key].label}:
 							if content[key].isRequired
 								strong: abbr(title='required') *
-							+e('input').input(type='input', placeholder=`${content[key].placeholder}`, required=content[key].isRequired)
+							+e('input').input(type='text', placeholder=`${content[key].placeholder}`, required=content[key].isRequired)
+
+			when 'contact-info'
+				- const { ['phone-number']: phoneNumber, ['e-mail']: eMail, isRequired, icon } = content;
+
+				each key in Object.keys(content)
+					- const className = key === 'phone-number' ? 'tel' : 'email'
+					+e('p')(class=`__${className}`)
+						+e('label').text-field.text-field__
+							span #{content[key].label}:
+							if content[key].isRequired
+								strong: abbr(title='required') *
+							+e('span').icon
+								!= pugHelpers.Icon.call(locals, {iconName: `icon--${content[key].icon}`, className: '', iconWidth: '18', iconHeight: '18'})
+							+e('input').input(type='tel', placeholder=`${content[key].placeholder}`, required=content[key].isRequired)
 

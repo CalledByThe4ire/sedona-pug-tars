@@ -28,7 +28,7 @@ const data = {
                     label: 'Контактный телефон:',
                     placeholder: 'Введите телефон',
                     isRequired: true,
-                    icon: 'tel'
+                    icon: 'phone'
                 },
                 'e-mail': {
                     label: 'Электронная почта:',
