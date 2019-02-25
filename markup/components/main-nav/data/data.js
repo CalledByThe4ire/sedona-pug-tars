@@ -10,7 +10,7 @@ const data = {
             title: 'Фото и видео'
         },
         feedback: {
-            href: '#',
+            href: 'feedback.html',
             title: 'Форма отзыва'
         },
         adv: {
