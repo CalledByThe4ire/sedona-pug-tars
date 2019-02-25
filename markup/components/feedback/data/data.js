@@ -24,13 +24,13 @@ const data = {
         'contact-info': {
             title: 'Контактная информация:',
             content: {
-                phoneNumber: {
+                'phone-number': {
                     label: 'Контактный телефон:',
                     placeholder: 'Введите телефон',
                     isRequired: true,
                     icon: 'tel'
                 },
-                eMail: {
+                'e-mail': {
                     label: 'Электронная почта:',
                     placeholder: 'Введите e-mail',
                     isRequired: true,
