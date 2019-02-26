@@ -1,9 +1,22 @@
 .feedback {
     display: block;
+    padding-bottom: 3.5rem;
+    background-color: #ffffff;
+
+    @include padding-x($offset--mobile);
 
     &__intro {
+        padding-bottom: 1.5rem;
+
         &::after {
             display: none !important;
         }
+    }
+
+    &__btn {
+        @include margin-x(auto);
+        @include btn-size;
+        @include btn-text-format;
+        @include btn-bg;
     }
 }

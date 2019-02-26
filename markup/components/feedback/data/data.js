@@ -25,13 +25,13 @@ const data = {
             title: 'Контактная информация:',
             content: {
                 'phone-number': {
-                    label: 'Контактный телефон:',
+                    label: 'Контактный телефон',
                     placeholder: 'Введите телефон',
                     isRequired: true,
                     icon: 'phone'
                 },
                 'e-mail': {
-                    label: 'Электронная почта:',
+                    label: 'Электронная почта',
                     placeholder: 'Введите e-mail',
                     isRequired: true,
                     icon: 'email'
@@ -62,7 +62,7 @@ const data = {
             ]
         },
         landmarks: {
-            title: 'Посещенные достопримечательности:',
+            title: 'Посещенные <span>достопримечательности:</span>',
             content: [
                 {
                     label: 'Мост дьявола',
