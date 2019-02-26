@@ -43,15 +43,21 @@ const data = {
             content: [
                 {
                     label: 'Скорее положительное',
-                    checked: true
+                    name: 'impression',
+                    value: 'positive',
+                    isChecked: true
                 },
                 {
                     label: 'Скорее отрицательное',
-                    checked: false
+                    name: 'impression',
+                    value: 'negative',
+                    isChecked: false
                 },
                 {
                     label: 'Затрудняюсь ответить',
-                    checked: false
+                    name: 'impression',
+                    value: 'neutral',
+                    isChecked: false
                 }
             ]
         },
@@ -60,29 +66,27 @@ const data = {
             content: [
                 {
                     label: 'Мост дьявола',
-                    checked: true
+                    isChecked: true
                 },
                 {
                     label: 'Слайд-парк',
-                    checked: true
+                    isChecked: true
                 },
                 {
                     label: 'Гора-Колокол',
-                    checked: false
+                    isChecked: false
                 },
                 {
                     label: 'Красные скалы',
-                    checked: true
+                    isChecked: true
                 }
             ]
         },
         feeling: {
             title: 'Опишите свои эмоции:',
-            content: [
-                {
-                    placeholder: 'Опишите подробно все свои восторги'
-                }
-            ]
+            content: {
+                placeholder: 'Опишите подробно все свои восторги'
+            }
         }
     }
 };

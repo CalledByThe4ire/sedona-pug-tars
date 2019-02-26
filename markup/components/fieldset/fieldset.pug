@@ -20,6 +20,7 @@ mixin fieldset(data, modifier)
 
 				each key in Object.keys(content)
 					- const className = key === 'phone-number' ? 'tel' : 'email'
+
 					+e('p')(class=`__${className}`)
 						+e('label').text-field.text-field__
 							span #{content[key].label}:
@@ -28,4 +29,32 @@ mixin fieldset(data, modifier)
 							+e('span').icon
 								!= pugHelpers.Icon.call(locals, {iconName: `icon--${content[key].icon}`, className: '', iconWidth: '18', iconHeight: '18'})
 							+e('input').input(type='tel', placeholder=`${content[key].placeholder}`, required=content[key].isRequired)
+
+			when 'impression'
+				+e('ul').list
+					each obj in content
+						- const { label, name, value, isChecked } = obj;
+
+						+e('li').item
+							+e('label').radio.radio__
+								+e('input').input(type='radio', name= name, value= value, checked= isChecked)
+								+e('span').icon
+								= label
+
+			when 'landmarks'
+				+e('ul').list
+					each obj in content
+						- const { label, isChecked } = obj;
+
+						+e('li').item
+							+e('label').checkbox.checkbox__
+								+e('input').input(type='checkbox', checked= isChecked)
+								+e('span').icon
+								= label
+
+			when 'feeling'
+					- const { placeholder } = content
+
+					+e('textarea').textarea(placeholder= placeholder)
+
 
