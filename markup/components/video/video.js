@@ -4,8 +4,12 @@ if (supportsVideo) {
     const videoControls = document.querySelector('.video__controls');
 
     // Hide the default controls
-    video.controls = false;
+    if (video) {
+        video.controls = false;
+    }
 
     // Display the user defined video controls
-    videoControls.style.display = 'grid';
+    if (videoControls) {
+        videoControls.style.display = 'grid';
+    }
 }
