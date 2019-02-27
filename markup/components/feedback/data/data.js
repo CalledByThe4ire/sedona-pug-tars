@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable no-unused-vars, no-useless-escape */
 const data = {
     feedback: {
         'full-name': {
@@ -7,17 +7,20 @@ const data = {
                 name: {
                     label: 'Имя',
                     placeholder: 'Петр',
-                    isRequired: true
+                    isRequired: true,
+                    pattern: `[А-Яа-яЁё]`
                 },
                 surname: {
                     label: 'Фамилия',
                     placeholder: 'Иванов',
-                    isRequired: true
+                    isRequired: true,
+                    pattern: `[А-Яа-яЁё]`
                 },
                 patronymic: {
                     label: 'Отчество',
                     placeholder: 'Александрович',
-                    isRequired: false
+                    isRequired: false,
+                    pattern: ''
                 }
             }
         },
@@ -28,12 +31,14 @@ const data = {
                     label: 'Контактный телефон',
                     placeholder: 'Введите телефон',
                     isRequired: true,
+                    pattern: `(\+?\d[- .]*){7,13}`,
                     icon: 'phone'
                 },
                 'e-mail': {
                     label: 'Электронная почта',
                     placeholder: 'Введите e-mail',
                     isRequired: true,
+                    pattern: `[^@]+@[^@]+\.[a-zA-Z]{2,6}`,
                     icon: 'email'
                 }
             }
