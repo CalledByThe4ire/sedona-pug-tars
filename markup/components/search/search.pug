@@ -7,5 +7,5 @@ mixin search(data)
 				h1 Заинтересовались?
 			+e('p').text
 				| Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в&nbsp;седоне
-			+e('a').btn(class='btn', href='') Найти гостиницу
-		//- +map()(class='search__map', data-latitude='34.869497', data-longitude='-111.760186')
+			+e('button').btn(class='btn', data-mfp-src="#search-popup", href='#') Найти гостиницу
+		+map()(class='search__map mfp-hide', id="search-popup", data-latitude='34.869497', data-longitude='-111.760186')
