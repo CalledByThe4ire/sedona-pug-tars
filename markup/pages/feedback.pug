@@ -2,6 +2,7 @@ extends _template.pug
 include ../components/page-header/page-header.pug
 include ../components/page-footer/page-footer.pug
 include ../components/feedback/feedback.pug
+include ../components/modal/modal.pug
 
 block append data
 	- const [ activePageData ] = getActivePageData('feedback');
@@ -16,3 +17,5 @@ block content
 		+page-header(activePageData, 'page-header')
 		+feedback(feedback, activePageData, 'feedback')
 		+page-footer(pageFooter)
+		+modal(modal, 'success')
+		+modal(modal, 'failure')

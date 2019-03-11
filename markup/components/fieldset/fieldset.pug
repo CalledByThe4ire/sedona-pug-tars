@@ -16,7 +16,7 @@ mixin fieldset(data, modifier)
 									span #{content[key].label}:
 									if content[key].isRequired
 										strong: abbr(title='required') *
-								+e('input').input(type='text', placeholder=`${content[key].placeholder}`, required=content[key].isRequired)
+								+e('input').input(type='text', placeholder=`${content[key].placeholder}`, required=content[key].isRequired, pattern=content[key].pattern || false)
 
 				when 'contact-info'
 					- const { ['phone-number']: phoneNumber, ['e-mail']: eMail, isRequired, icon } = content;
@@ -31,7 +31,7 @@ mixin fieldset(data, modifier)
 									if content[key].isRequired
 										strong: abbr(title='required') *
 								+e.inner
-									+e('input').input(type='tel', placeholder=`${content[key].placeholder}`, required=content[key].isRequired)
+									+e('input').input(type='tel', placeholder=`${content[key].placeholder}`, required=content[key].isRequired, pattern=content[key].pattern || false)
 									+e('span').icon
 										!= pugHelpers.Icon.call(locals, {iconName: `icon--${content[key].icon}`, className: '', iconWidth: '18', iconHeight: '18'})
 
