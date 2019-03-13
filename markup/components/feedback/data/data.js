@@ -2,7 +2,7 @@
 const data = {
     feedback: {
         'full-name': {
-            title: 'Представьтесь:',
+            heading: 'Представьтесь:',
             content: {
                 name: {
                     label: 'Имя',
@@ -25,7 +25,7 @@ const data = {
             }
         },
         'contact-info': {
-            title: 'Контактная информация:',
+            heading: 'Контактная информация:',
             content: {
                 'phone-number': {
                     label: 'Контактный телефон',
@@ -44,7 +44,7 @@ const data = {
             }
         },
         impression: {
-            title: 'Ваше общее впечатление:',
+            heading: 'Ваше общее впечатление:',
             content: [
                 {
                     label: 'Скорее положительное',
@@ -67,7 +67,7 @@ const data = {
             ]
         },
         landmarks: {
-            title: 'Посещенные <span>достопримечательности:</span>',
+            heading: 'Посещенные <span>достопримечательности:</span>',
             content: [
                 {
                     label: 'Мост дьявола',
@@ -88,7 +88,7 @@ const data = {
             ]
         },
         feeling: {
-            title: 'Опишите свои эмоции:',
+            heading: 'Опишите свои эмоции:',
             content: {
                 placeholder: 'Опишите подробно все свои восторги'
             }

@@ -1,9 +1,9 @@
 mixin fieldset(data, modifier)
-	+b('fieldset').fieldset(role='group' aria-labelledby='legend')&attributes(attributes)
-		- const { title, content } = data;
+	+b('fieldset').fieldset&attributes(attributes)
+		- const { heading, content } = data;
 
-		//- https://www.w3.org/WAI/tutorials/forms/grouping/#associating-related-controls-with-wai-aria
-		+e('div').legend(id='legend') !{title}
+		+e('legend').legend.legend__
+			+e('h2').heading !{heading}
 		+e('div').inner
 			case modifier
 				when 'full-name'
