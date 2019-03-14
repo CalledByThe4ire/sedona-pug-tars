@@ -7,20 +7,17 @@ const data = {
                 name: {
                     label: 'Имя',
                     placeholder: 'Петр',
-                    isRequired: true,
-                    pattern: `[А-Яа-яЁё]`
+                    isRequired: true
                 },
                 surname: {
                     label: 'Фамилия',
                     placeholder: 'Иванов',
-                    isRequired: true,
-                    pattern: `[А-Яа-яЁё]`
+                    isRequired: true
                 },
                 patronymic: {
                     label: 'Отчество',
                     placeholder: 'Александрович',
-                    isRequired: false,
-                    pattern: ''
+                    isRequired: false
                 }
             }
         },
@@ -31,14 +28,12 @@ const data = {
                     label: 'Контактный телефон',
                     placeholder: 'Введите телефон',
                     isRequired: true,
-                    pattern: `(\+?\d[- .]*){7,13}`,
                     icon: 'phone'
                 },
                 'e-mail': {
                     label: 'Электронная почта',
                     placeholder: 'Введите e-mail',
                     isRequired: true,
-                    pattern: `[^@]+@[^@]+\.[a-zA-Z]{2,6}`,
                     icon: 'email'
                 }
             }
