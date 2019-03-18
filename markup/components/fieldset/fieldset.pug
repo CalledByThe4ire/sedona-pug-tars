@@ -15,7 +15,7 @@ mixin fieldset(data, modifier)
 								+e.text
 									span #{content[key].label}:
 									if content[key].isRequired
-										strong: abbr(title='required') *
+										strong: abbr(title='обязательное для заполнения поле') *
 								+e('input').input(type='text', placeholder=`${content[key].placeholder}`, required=content[key].isRequired, pattern=content[key].pattern || false)
 
 				when 'contact-info'
@@ -29,7 +29,7 @@ mixin fieldset(data, modifier)
 								+e.text
 									span #{content[key].label}:
 									if content[key].isRequired
-										strong: abbr(title='required') *
+										strong: abbr(title='обязательное для заполнения поле') *
 								+e.inner
 									+e('input').input(type='tel', placeholder=`${content[key].placeholder}`, required=content[key].isRequired, pattern=content[key].pattern || false)
 									+e('span').icon
