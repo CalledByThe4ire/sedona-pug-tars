@@ -1,9 +1,10 @@
 mixin modal(data, key)
-	+b('div').modal(class=`--${key}`)&attributes(attributes)
+	+b('dialog').modal(class=`--${key}`)&attributes(attributes)
 		- const modalData = data[key];
 		- const { heading, text, label } = modalData;
 
-		+e('h2').heading= heading
-		+e('p').text= text
-		+e('button').btn.btn= label
+		+e('h2').heading !{heading}
+		+e('p').text !{text}
+		+e('div').inner
+			+e('button').btn.btn= label
 

@@ -1,24 +1,23 @@
 .modal {
-    // kill me starts here
-  position: absolute;
-  left: 50%;
-
-  transform: translate(-50%, -50%);
-  outline: 1px dashed red;
-  // kill me ends here
+  $root: &;
   top: 50%;
 
   width: 100%;
   margin: 0;
-  padding: 2rem;
+  padding: 0;
 
   text-align: center;
 
   border: none;
   background-color: #ffffff;
+  box-shadow: 0 5px 15px 5px rgba($color-primary, 0.15);
 
-//   enable me
-//   transform: translateY(-50%);
+  transform: translateY(-50%);
+
+  @media #{$tab-desk} {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
   &::backdrop {
     background-color: rgba($color-secondary, 0.75);
@@ -30,24 +29,132 @@
   }
 
   &__heading {
+    margin: 0;
+    padding: 0;
+
     font-size: 1.8rem;
     line-height: 2.6rem;
     font-weight: 700;
+
+    @media #{$tab-desk} {
+      font-size: 3rem;
+      line-height: 4rem;
+    }
   }
 
   &__text {
-    line-height: 2.6rem;
+    margin: 0;
+    padding: 0;
+
+    line-height: 2.4rem;
+
+    @media #{$tab-desk} {
+      & span {
+        display: block;
+      }
+    }
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
   }
 
   &__btn {
-    display: flex;
-    @include margin-x(auto);
     @include btn-bg();
-    @include btn-size();
     @include btn-text-format();
+
+    display: flex;
+
+    font-size: 1.8rem;
+
+    @media #{$tab-desk} {
+      font-size: 2.1rem;
+    }
+  }
+
+  &--success {
+    #{$root}__heading {
+      @include padding-x(5rem);
+      padding-top: 6rem;
+      padding-bottom: 3.5rem;
+    }
+
+    #{$root}__text {
+      @include padding-x(5rem);
+      padding-bottom: 3rem;
+    }
+
+    @media #{$tablet} {
+      width: calc(100% - 12rem);
+    }
+
+    @media #{$desktop} {
+      width: 640px;
+    }
+
+    #{$root}__inner {
+      @include padding-x(2rem);
+      @include padding-y(2rem);
+
+      background-color: #f2f2f2;
+
+      @media #{$tab-desk} {
+        @include padding-y(4.5rem);
+      }
+    }
+
+    #{$root}__heading,
+    #{$root}__text,
+    #{$root}__inner {
+      @media #{$tablet} {
+        @include padding-x(9.5rem);
+      }
+
+      @media #{$desktop} {
+        @include padding-x(9rem);
+      }
+    }
+
+    #{$root}__btn {
+      @include btn-size($minWidth: 100%);
+    }
   }
 
   &--failure {
-      display: none;
+    padding: 3rem;
+    padding-top: 4rem;
+
+    @media #{$tab-desk} {
+      width: 400px;
+      padding: 5rem;
+    }
+
+    @media #{$desktop} {
+      padding-top: 6rem;
+      @include padding-x(6rem);
+    }
+
+    #{$root}__heading {
+      padding-bottom: 3rem;
+    }
+
+    #{$root}__text {
+      padding-bottom: 2rem;
+
+      @media #{$tab-desk} {
+        padding-bottom: 3rem;
+      }
+    }
+
+    #{$root}__btn {
+      @include btn-size($minWidth: 180px);
+
+      @media #{$tab-desk} {
+        min-width: 100%;
+      }
+    }
   }
 }
