@@ -1,16 +1,53 @@
 .modal {
-    top: 50%;
+    // kill me starts here
+  position: absolute;
+  left: 50%;
 
-    width: 100%;
-    margin: 0;
-    padding: 0;
+  transform: translate(-50%, -50%);
+  outline: 1px dashed red;
+  // kill me ends here
+  top: 50%;
 
-    border: none;
-    background-color: #ffffff;
+  width: 100%;
+  margin: 0;
+  padding: 2rem;
 
-    transform: translateY(-50%);
+  text-align: center;
+
+  border: none;
+  background-color: #ffffff;
+
+//   enable me
+//   transform: translateY(-50%);
 
   &::backdrop {
     background-color: rgba($color-secondary, 0.75);
+  }
+
+  &__heading,
+  &__text {
+    text-transform: uppercase;
+  }
+
+  &__heading {
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+    font-weight: 700;
+  }
+
+  &__text {
+    line-height: 2.6rem;
+  }
+
+  &__btn {
+    display: flex;
+    @include margin-x(auto);
+    @include btn-bg();
+    @include btn-size();
+    @include btn-text-format();
+  }
+
+  &--failure {
+      display: none;
   }
 }
