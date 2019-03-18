@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const page = document.querySelector('.page');
+    const toggler = document.querySelector('.toggler');
+
     const mqMobile = window.matchMedia('only screen and (max-width: 767px)');
     const mqTabDesk = window.matchMedia('only screen and (min-width: 768px)');
 
@@ -34,17 +36,15 @@ document.addEventListener('DOMContentLoaded', () => {
      */
     const dropdownHandler = evt => {
         const { target } = evt;
-        if (
-            target ===
-            document
-                .querySelector('.toggler')
-                .classList.contains('toggler--is-opened')
-        ) {
-            page.classList.toggle('page--dropdown');
+        evt.preventDefault();
+
+        if (target.classList.contains('toggler--is-opened')) {
+            page.classList.toggle(
+                'page--dropdown',
+                page.classList.contains('page--dropdown')
+            );
         }
     };
 
-    page.addEventListener('click', evt => {
-        dropdownHandler(evt);
-    });
+    toggler.addEventListener('click', evt => dropdownHandler(evt));
 });
