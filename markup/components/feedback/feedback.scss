@@ -1,22 +1,45 @@
 .feedback {
-    display: block;
-    padding-bottom: 3.5rem;
-    background-color: #ffffff;
+  display: flex;
+  flex-flow: column wrap;
+  padding-bottom: 3.5rem;
+  background-color: #ffffff;
 
-    @include padding-x($offset--mobile);
+  @include padding-x($offset--mobile);
 
-    &__intro {
-        padding-bottom: 1.5rem;
+  @media #{$tab-desk} {
+    flex-flow: row wrap;
 
-        &::after {
-            display: none !important;
-        }
+    & > .fieldset {
+      width: 100%;
     }
 
-    &__btn {
-        @include margin-x(auto);
-        @include btn-size;
-        @include btn-text-format;
-        @include btn-bg;
+    & > .fieldset[class*="fieldset--full-name"],
+    & > .fieldset[class*="fieldset--impression"] {
+      width: 50%;
     }
+  }
+
+  @media #{$tablet} {
+    @include padding-x(6rem);
+  }
+
+  &__intro {
+    @include margin-x(auto);
+    padding-bottom: 1.5rem;
+
+    &::after {
+      display: none !important;
+    }
+  }
+
+  &__btn {
+    @media #{$tablet} {
+      order: 30;
+    }
+
+    @include margin-x(auto);
+    @include btn-size;
+    @include btn-text-format;
+    @include btn-bg;
+  }
 }

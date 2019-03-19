@@ -6,15 +6,42 @@
 
   @include margin-x(-$offset--mobile);
 
+  @media #{$tab-desk} {
+    @include margin-x(initial);
+  }
+
   border: none;
 
   &--full-name {
+    @media #{$tablet} {
+      order: 10;
+      outline: 1px dashed red;
+
+      & #{$root}__legend {
+        padding-left: 5.5rem;
+        text-align: left;
+      }
+
+      & #{$root}__inner {
+        padding: 0;
+        padding-left: 5.5rem;
+      }
+
+      .text-input {
+        outline: 1px dashed green;
+      }
+    }
+
     & .text-input__text {
       margin-right: 1.5rem;
     }
   }
 
   &--contact-info {
+    @media #{$tablet} {
+      order: 15;
+    }
+
     & #{$root}__inner {
       padding-bottom: 3rem;
     }
@@ -25,16 +52,51 @@
   }
 
   &--impression {
-    & #{$root}__inner {
-      padding-bottom: 1.5rem;
+    @media #{$tablet} {
+      order: 5;
+      outline: 1px dashed red;
+
+      & #{$root}__legend {
+        padding-left: 5.5rem;
+        text-align: left;
+      }
+
+      & #{$root}__inner {
+        padding: 0;
+        padding-right: 5.5rem;
+      }
+
+      .toggle-input {
+        outline: 1px dashed green;
+
+        @media #{$tab-desk} {
+          min-height: 6rem;
+        }
+      }
     }
 
-    & #{$root}__item {
+    & #{$root}__inner {
+      padding-bottom: 1.5rem;
+
+      @media #{$tab-desk} {
+        padding-bottom: 0;
+      }
+    }
+
+    & #{$root}__item:not(:last-of-type) {
       margin-bottom: 1.5rem;
+
+      @media #{$tab-desk} {
+        margin-bottom: 2rem;
+      }
     }
   }
 
   &--landmarks {
+    @media #{$tablet} {
+      order: 20;
+    }
+
     & #{$root}__inner {
       padding-bottom: 1rem;
     }
@@ -45,6 +107,10 @@
   }
 
   &--feeling {
+    @media #{$tablet} {
+      order: 25;
+    }
+
     & #{$root}__inner {
       padding-bottom: 0;
       margin-bottom: 5rem;
@@ -95,6 +161,10 @@
     text-align: center;
 
     border-top: 1px solid #e5e5e5;
+
+    @media #{$tab-desk} {
+        border: none;
+    }
 
     & span {
       display: block;
@@ -148,7 +218,7 @@
     }
 
     &::placeholder {
-        font-family: $font-family;
+      font-family: $font-family;
     }
 
     &:hover {
