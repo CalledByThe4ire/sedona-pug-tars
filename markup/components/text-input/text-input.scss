@@ -74,7 +74,7 @@
             }
         }
 
-        &:invalid {
+        &:invalid:not(:placeholder-shown) {
             background-color: transparent;
             border-color: #d28181;
 
