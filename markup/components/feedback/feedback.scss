@@ -24,16 +24,23 @@
   }
 
   &__intro {
+    width: 100%;
     @include margin-x(auto);
     padding-bottom: 1.5rem;
 
     &::after {
       display: none !important;
     }
+
+    & .intro__heading {
+      @media #{$tab-desk} {
+        font-size: 3rem;
+      }
+    }
   }
 
   &__btn {
-    @media #{$tablet} {
+    @media #{$tab-desk} {
       order: 30;
     }
 

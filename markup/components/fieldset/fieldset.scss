@@ -13,22 +13,18 @@
   border: none;
 
   &--full-name {
-    @media #{$tablet} {
+    @media #{$tab-desk} {
       order: 10;
-      outline: 1px dashed red;
 
       & #{$root}__legend {
-        padding-left: 5.5rem;
+        padding-left: 4rem;
+        padding-bottom: 5.5rem;
         text-align: left;
       }
 
       & #{$root}__inner {
         padding: 0;
-        padding-left: 5.5rem;
-      }
-
-      .text-input {
-        outline: 1px dashed green;
+        padding-left: 4rem;
       }
     }
 
@@ -38,12 +34,32 @@
   }
 
   &--contact-info {
-    @media #{$tablet} {
+    @media #{$tab-desk} {
       order: 15;
+      margin-top: 4.5rem;
+
+      border-top: 1px solid #e5e5e5;
+    }
+
+    & #{$root}__legend {
+      @media #{$tab-desk} {
+        width: auto;
+        @include padding-x(6.5rem);
+        padding-bottom: 2.5rem;
+      }
     }
 
     & #{$root}__inner {
       padding-bottom: 3rem;
+
+      @media #{$tab-desk} {
+        @include padding-x(0);
+        padding-bottom: 4rem;
+
+        & > *:not(:last-of-type) {
+          margin-bottom: 3.5rem;
+        }
+      }
     }
 
     & .text-input__text {
@@ -52,23 +68,35 @@
   }
 
   &--impression {
-    @media #{$tablet} {
+    position: relative;
+    @media #{$tab-desk} {
       order: 5;
-      outline: 1px dashed red;
+
+      &::after {
+        content: "";
+
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        display: block;
+        width: 1px;
+        height: calc(100% - 2rem);
+        background-color: #e5e5e5;
+      }
 
       & #{$root}__legend {
-        padding-left: 5.5rem;
+        padding-right: 4rem;
+        padding-bottom: 5.5rem;
         text-align: left;
       }
 
       & #{$root}__inner {
         padding: 0;
-        padding-right: 5.5rem;
+        padding-right: 4rem;
       }
 
       .toggle-input {
-        outline: 1px dashed green;
-
         @media #{$tab-desk} {
           min-height: 6rem;
         }
@@ -93,27 +121,84 @@
   }
 
   &--landmarks {
-    @media #{$tablet} {
+    @media #{$tab-desk} {
       order: 20;
+      border-top: 1px solid #e5e5e5;
+    }
+
+    & #{$root}__legend {
+      @media #{$tab-desk} {
+        width: auto;
+        @include padding-x(6.5rem);
+        padding-bottom: 2.5rem;
+      }
     }
 
     & #{$root}__inner {
       padding-bottom: 1rem;
+
+      @media #{$tab-desk} {
+        @include padding-x(9rem);
+        padding-bottom: 5rem;
+      }
     }
 
     & #{$root}__item {
       margin-bottom: 2rem;
+
+      @media #{$tab-desk} {
+        width: 50%;
+        margin-bottom: 4.5rem;
+
+        &:nth-child(-n + 2) {
+          padding-right: 3rem;
+        }
+
+        &:nth-child(n + 2) {
+          margin-bottom: auto;
+        }
+
+        &:nth-child(1) {
+          order: 5;
+          padding-right: 3rem;
+        }
+
+        &:nth-child(2) {
+          order: 15;
+        }
+
+        &:nth-child(3) {
+          order: 10;
+        }
+
+        &:nth-child(4) {
+          order: 20;
+        }
+      }
     }
   }
 
   &--feeling {
-    @media #{$tablet} {
+    @media #{$tab-desk} {
       order: 25;
+      border-top: 1px solid #e5e5e5;
+    }
+
+    & #{$root}__legend {
+      @media #{$tab-desk} {
+        width: auto;
+        @include padding-x(6.5rem);
+        padding-bottom: 2.5rem;
+      }
     }
 
     & #{$root}__inner {
       padding-bottom: 0;
       margin-bottom: 5rem;
+
+      @media #{$tab-desk} {
+          @include padding-x(0);
+      }
     }
   }
 
@@ -163,7 +248,7 @@
     border-top: 1px solid #e5e5e5;
 
     @media #{$tab-desk} {
-        border: none;
+      border: none;
     }
 
     & span {
@@ -199,6 +284,11 @@
 
   &__list {
     @include list-clear();
+
+    @media #{$tab-desk} {
+      display: flex;
+      flex-flow: row wrap;
+    }
   }
 
   &__textarea {
@@ -208,6 +298,10 @@
 
     background-color: #f2f2f2;
     border: 4px solid #f2f2f2;
+
+    @media #{$tab-desk} {
+        margin-top: 2rem;
+    }
 
     &,
     &::placeholder {
