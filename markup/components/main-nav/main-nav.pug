@@ -1,8 +1,0 @@
-mixin main-nav(data, href)
-	+b('nav').main-nav&attributes(attributes)
-		block
-		+e('div').dropdown
-			+e('ul').list.list__
-				each val in data
-					+e.item(class=`${val.href === href ? '--active' : ''}`)
-						+e.link(href=val.href)= val.title

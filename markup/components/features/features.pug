@@ -1,9 +1,0 @@
-include ../intro/intro.pug
-include ../feature/feature.pug
-
-mixin features(data, activePageData, parentBlockName)
-	- const { name } = activePageData;
-	+b('main').features&attributes(attributes)
-		+intro(intro, name)(class=`${parentBlockName}__intro`)
-		each val, index in data
-			+feature(val, index + 1)

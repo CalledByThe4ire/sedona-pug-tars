@@ -1,6 +1,0 @@
-mixin intro(data, name)
-	+b('header').intro&attributes(attributes)
-		- const key = Object.keys(data).filter(k => k === name)
-		- const entry = data[key]
-		+e('h1').heading !{entry.title}
-		+e('p').lead !{entry.subtitle}
