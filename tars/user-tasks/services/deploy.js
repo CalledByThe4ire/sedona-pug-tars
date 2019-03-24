@@ -17,7 +17,7 @@ const ghPages = require('gulp-gh-pages');
  */
 module.exports = function() {
     return gulp.task(
-        'deploy',
+        'service:deploy',
         /*['required-task-name'],*/ function(done) {
             return (
                 gulp

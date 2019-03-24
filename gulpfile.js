@@ -24,7 +24,7 @@ gulp.task('dev', () => gulp.start('main:dev'));
 gulp.task('build', () => gulp.start('main:build'));
 
 // Deploy task. Deploy release version
-gulp.task('deploy', () => gulp.start('services:deploy'));
+gulp.task('deploy', () => gulp.start('service:deploy'));
 
 // Init task. Just start init task
 gulp.task('init', () => gulp.start('service:init'));
