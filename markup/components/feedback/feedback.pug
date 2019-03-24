@@ -10,6 +10,8 @@ mixin feedback(data, activePageData, parentBlockName)
 		each key in keys
 			+fieldset(data[key], key)(class=`--${key} __fieldset`)
 
-		+e('button').btn(class='btn', type='submit') отправить отзыв
+		+e('div').inner
+			+e('button').btn(class='btn', type='submit') отправить отзыв
+			+e('span').footnote *&nbsp;— обязательные поля
 
 

@@ -27,14 +27,14 @@ const data = {
             heading: 'Контактная информация:',
             content: {
                 'phone-number': {
-                    label: 'Контактный телефон',
+                    label: '<span>Контактный</span> телефон',
                     placeholder: 'Введите телефон',
                     pattern: '(\\+?\\d[- .]*){7,13}',
                     isRequired: true,
                     icon: 'phone'
                 },
                 'e-mail': {
-                    label: 'Электронная почта',
+                    label: 'Электронная&nbsp;почта',
                     placeholder: 'Введите e-mail',
                     pattern: '[^@]+@[^@]+\\.[a-zA-Z]{2,6}',
                     isRequired: true,

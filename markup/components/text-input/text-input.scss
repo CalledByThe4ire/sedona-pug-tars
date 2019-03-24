@@ -8,13 +8,19 @@
     &__text {
         text-transform: uppercase;
 
-        @media #{$tab-desk} {
-            padding-left: 2rem;
+        @media #{$tablet} {
+            padding-left: calc(1rem + 4px);
         }
 
-        & abbr {
+        abbr {
             text-decoration: none;
             font-weight: 400;
+        }
+
+        span > span {
+            @media #{$desktop} {
+                display: none;
+            }
         }
     }
 
