@@ -1,21 +1,24 @@
 /* eslint-disable */
 import $ from 'jquery';
 
-$(document).ready(() => {
+document.addEventListener('DOMContentLoaded', () => {
     // let enableMagnific = true;
-    const $searchBtn = $('.search__btn');
-    $searchBtn.magnificPopup({
-        type: 'inline',
-        closeBtnInside: false,
-        midClick: true
-        // disableOn: () => enableMagnific
-    });
+    const searchBtn = document.querySelector('.search__btn');
+    if (searchBtn) {
+        $(searchBtn).magnificPopup({
+            type: 'inline',
+            closeBtnInside: false,
+            midClick: true
+            // disableOn: () => enableMagnific
+        });
+    }
 
     $(window).resize(() => {
         const $mfp = $.magnificPopup.instance;
-        if ($mfp.isOpen) {
+        if ($mfp && $mfp.isOpen) {
             $mfp.close();
             // enableMagnific = false;
         }
     });
 });
+
