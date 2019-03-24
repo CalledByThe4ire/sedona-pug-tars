@@ -1,0 +1,14 @@
+// https://dimsemenov.com/plugins/magnific-popup/documentation.html
+@import 'magnific-popup/dist/magnific-popup';
+
+.mfp-bg {
+    background-color: $color-secondary;
+}
+
+.mfp-close-btn-in,
+.mfp-close {
+    color: #ffffff;
+    transition-duration: 0.3s;
+}
+
+
