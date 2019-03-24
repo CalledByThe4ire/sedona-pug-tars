@@ -12,9 +12,5 @@ mixin page-header(data, parentBlockName)
 				+toggler(class='main-nav__toggler')
 					!= pugHelpers.Icon.call(locals, {iconName: 'icon--menu', className: 'toggler__icon', iconWidth: '23', iconHeight: '22'})
 			+e.link(href=href)
-				+e.image(
-					src='%=static=%img/assets/page-header/page-header__welcome-text.svg'
-					width="280"
-					height="213"
-					alt="Welcome to the gorgeous Sedona"
-				)
+				!= pugHelpers.Icon.call(locals, {iconName: 'icon--welcome-text', className: 'page-header__icon', iconWidth: '280', iconHeight: '213'})
+
