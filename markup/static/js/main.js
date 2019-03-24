@@ -3,7 +3,6 @@
 import 'static/js/libraries/utils';
 
 // plugins
-import 'static/js/plugins/pixel-glass';
 import 'static/js/plugins/magnific-popup';
 
 // components

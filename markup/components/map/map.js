@@ -32,7 +32,7 @@ const init = () => {
                 },
                 {
                     iconLayout: 'default#image',
-                    iconImageHref: 'static/img/assets/map/map__marker.svg',
+                    iconImageHref: './static/img/assets/map/map__marker.svg',
                     iconImageSize: [30, 30],
                     iconImageOffset: [-15, -15]
                 }
