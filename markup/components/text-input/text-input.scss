@@ -1,116 +1,126 @@
 .text-input {
-    $root: &;
-    $borderWidth: 4px;
+  $root: &;
+  $borderWidth: 4px;
+
+  display: flex;
+  min-height: 6rem;
+
+  &__text {
+    text-transform: uppercase;
+
+    @media #{$tablet} {
+      padding-left: calc(1rem + 4px);
+    }
+
+    abbr {
+      text-decoration: none;
+      font-weight: 400;
+    }
+
+    span > span {
+      @media #{$desktop} {
+        display: none;
+      }
+    }
+  }
+
+  &__inner {
+    position: relative;
+  }
+
+  &__icon {
+    position: absolute;
+    top: $borderWidth;
+    right: $borderWidth;
+    bottom: 0;
 
     display: flex;
-    min-height: 6rem;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: calc(100% - (#{$borderWidth} * 2));
 
-    &__text {
-        text-transform: uppercase;
+    background-color: #f2f2f2;
+  }
 
-        @media #{$tablet} {
-            padding-left: calc(1rem + 4px);
-        }
+  &__input {
+    width: 100%;
+    padding: 1rem;
 
-        abbr {
-            text-decoration: none;
-            font-weight: 400;
-        }
+    font-size: 1.8rem;
+    line-height: 2.6rem;
+    font-weight: 700;
 
-        span > span {
-            @media #{$desktop} {
-                display: none;
-            }
-        }
+    border: none;
+    background-color: #f2f2f2;
+    border: $borderWidth solid #f2f2f2;
+
+    &::placeholder {
+      color: $color-primary;
     }
 
-    &__inner {
-        position: relative;
+    &:hover {
+      background-color: #e5e5e5;
+      border-color: #e5e5e5;
     }
 
-    &__icon {
-        position: absolute;
-        top: $borderWidth;
-        right: $borderWidth;
-        bottom: 0;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 60px;
-        height: calc(100% - (#{$borderWidth} * 2));
-
-        background-color: #f2f2f2;
+    &:focus {
+      background-color: transparent;
+      border-color: #e5e5e5;
     }
 
-    &__input {
-        width: 100%;
-        padding: 1rem;
-
-        font-size: 1.8rem;
-        line-height: 2.6rem;
-        font-weight: 700;
-
-        border: none;
-        background-color: #f2f2f2;
-        border: $borderWidth solid #f2f2f2;
-
-        &::placeholder {
-            color: $color-primary;
-        }
-
-        &:hover {
-            background-color: #e5e5e5;
-            border-color: #e5e5e5;
-        }
-
-        &:focus {
-            background-color: transparent;
-            border-color: #e5e5e5;
-        }
-
-        &:hover,
-        &:focus,
-        &:valid,
-        &:invalid {
-            transition-duration: 0.3s;
-        }
-
-        &:hover,
-        &:focus {
-            & + #{$root}__icon {
-                background-color: #e5e5e5;
-                transition-duration: 0.3s;
-            }
-        }
-
-        &:invalid:not(:placeholder-shown) {
-            background-color: transparent;
-            border-color: #d28181;
-
-            & + #{$root}__icon {
-                background-color: #d28181;
-                transition-duration: 0.3s;
-            }
-        }
-
-        &:focus:invalid {
-            border-color: #e5e5e5;
-
-            & + #{$root}__icon {
-                background-color: #e5e5e5;
-                transition-duration: 0.3s;
-            }
-        }
-
-        &:valid[required] {
-            background-color: transparent;
-            border-color: #81d290;
-
-            & + #{$root}__icon {
-                background-color: #81d290;
-                transition-duration: 0.3s;
-            }
-        }
+    &:hover,
+    &:focus,
+    &:valid,
+    &:invalid {
+      transition-duration: 0.3s;
     }
+
+    &:hover,
+    &:focus {
+      & + #{$root}__icon {
+        background-color: #e5e5e5;
+        transition-duration: 0.3s;
+      }
+    }
+
+    &:invalid:not(:placeholder-shown) {
+      background-color: transparent;
+      border-color: #d28181;
+
+      & + #{$root}__icon {
+        background-color: #d28181;
+        transition-duration: 0.3s;
+      }
+    }
+
+    &:focus:invalid {
+      border-color: #e5e5e5;
+
+      & + #{$root}__icon {
+        background-color: #e5e5e5;
+        transition-duration: 0.3s;
+      }
+    }
+
+    &:valid[required] {
+      background-color: transparent;
+      border-color: #81d290;
+
+      & + #{$root}__icon {
+        background-color: #81d290;
+        transition-duration: 0.3s;
+      }
+    }
+
+    &--invalid {
+      background-color: transparent;
+      border-color: #d28181;
+
+      & + #{$root}__icon {
+        background-color: #d28181;
+        transition-duration: 0.3s;
+      }
+    }
+  }
 }

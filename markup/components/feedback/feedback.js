@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let dialogSuccess = null;
     let dialogFailure = null;
     let btnSubmit = null;
+    let requiredInputs = null;
 
     if (dialogs) {
         dialogs.forEach(dialog => {
@@ -20,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (form) {
         btnSubmit = form.querySelector('.feedback__btn');
+        requiredInputs = form.querySelectorAll('input[required]');
     }
 
     let isValid = false;
@@ -29,14 +31,22 @@ document.addEventListener('DOMContentLoaded', () => {
         evt.preventDefault();
         target.setAttribute('disabled', 'disabled');
 
-        isValid = Array.from(form.querySelectorAll('input'))
-            .filter(input => input.hasAttribute('required'))
-            .every(input => input.validity.valid);
+        isValid = Array.from(requiredInputs).every(
+            input => input.validity.valid
+        );
 
         if (isValid) {
             dialogSuccess.showModal();
             noScroll.on();
         } else {
+            Array.from(requiredInputs).forEach(input => {
+                const pattern = new RegExp(input.getAttribute('pattern'));
+                const isInputCorrect = pattern.test(input.value);
+
+                if (!isInputCorrect) {
+                    input.classList.add('text-input__input--invalid');
+                }
+            });
             dialogFailure.showModal();
             noScroll.on();
         }
@@ -53,6 +63,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         dialogFailure.close();
         noScroll.off();
+    };
+
+    const requiredInputHandler = evt => {
+        const { target } = evt;
+        if (target.classList.contains('text-input__input--invalid')) {
+            target.classList.remove('text-input__input--invalid');
+        }
     };
 
     const keyboardHandler = evt => {
@@ -76,6 +93,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (dialogs) {
         dialogs.forEach(element =>
             element.addEventListener('click', e => btnModalHandler(e))
+        );
+    }
+
+    if (requiredInputs) {
+        Array.from(requiredInputs).forEach(input =>
+            input.addEventListener('input', e => requiredInputHandler(e))
         );
     }
 
