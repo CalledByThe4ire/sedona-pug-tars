@@ -3474,6 +3474,17 @@ img.mfp-img {
           transition-duration: 0.3s;
 }
 
+.text-input__input--invalid {
+  background-color: transparent;
+  border-color: #d28181;
+}
+
+.text-input__input--invalid + .text-input__icon {
+  background-color: #d28181;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
 .toggle-input {
   display: -webkit-box;
   display: -ms-flexbox;
